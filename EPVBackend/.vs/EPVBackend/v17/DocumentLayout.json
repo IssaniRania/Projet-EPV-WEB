@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projet Easy\\projet EPV\\EPVBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\designtimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\designtimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\controllers\\controllerproduit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\controllers\\controllerproduit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\epvbackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\epvbackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|d:\\projet easy\\projet epv\\epvbackend\\epvbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CC1EB97-FC0E-4E4D-AE85-F4FAB957FDF3}|EPVBackend\\EPVBackend.csproj|solutionrelative:epvbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConfigurationService.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\ConfigurationService.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\ConfigurationService.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\ConfigurationService.cs",
+              "RelativeToolTip": "EPVBackend\\ConfigurationService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T21:28:08.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "EPVBackend\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T19:22:56.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\Model\\Produit.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeToolTip": "EPVBackend\\Model\\Produit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:41:16.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EPVBackend\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:35:43.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DesignTimeDbContextFactory.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\DesignTimeDbContextFactory.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\DesignTimeDbContextFactory.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\DesignTimeDbContextFactory.cs",
+              "RelativeToolTip": "EPVBackend\\DesignTimeDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:11:54.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControllerProduit.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerProduit.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\Controllers\\ControllerProduit.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerProduit.cs",
+              "RelativeToolTip": "EPVBackend\\Controllers\\ControllerProduit.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T19:45:30.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EPVBackend.http",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\EPVBackend.http",
+              "RelativeDocumentMoniker": "EPVBackend\\EPVBackend.http",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\EPVBackend.http",
+              "RelativeToolTip": "EPVBackend\\EPVBackend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-24T19:33:24.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "EPVBackend\\appsettings.json",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\appsettings.json",
+              "RelativeToolTip": "EPVBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-24T19:33:36.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Program.cs",
+              "RelativeDocumentMoniker": "EPVBackend\\Program.cs",
+              "ToolTip": "D:\\Projet Easy\\projet EPV\\EPVBackend\\EPVBackend\\Program.cs",
+              "RelativeToolTip": "EPVBackend\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T19:32:16.094Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
