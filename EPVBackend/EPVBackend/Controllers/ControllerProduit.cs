@@ -42,6 +42,22 @@ namespace EPVBackend.Controllers
 
             return Ok(produit);
         }
+
+        // POST: api/produit
+        [HttpPost]
+        public async Task<IActionResult> CreateProduit([FromBody] Produit produit)
+        {
+            if (produit == null)
+            {
+                return BadRequest("Le produit ne peut pas être nul.");
+            }
+
+            _context.Produits.Add(produit);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetProduit), new { codeBarres = produit.codeBarres }, produit);
+        }
+
     }
 
 }
