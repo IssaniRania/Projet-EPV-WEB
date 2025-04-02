@@ -4,6 +4,7 @@ import { Table, TableBody, TableRow, TableCell, TableHead } from '@mui/material'
 
 type ProductTableProps = {
   filterName: string;
+  reload: () => void;
 };
 
 type Product = {
@@ -14,7 +15,7 @@ type Product = {
   tva: string;
 };
 
-export function ProductTable({ filterName }: ProductTableProps) {
+export function ProductTable({ filterName, reload }: ProductTableProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +25,7 @@ export function ProductTable({ filterName }: ProductTableProps) {
     axios
       .get('http://localhost:5088/api/produit')
       .then((response) => {
-        console.log(response)
+        console.log(response);
         setProducts(response.data);
         setLoading(false);
       })
@@ -32,7 +33,7 @@ export function ProductTable({ filterName }: ProductTableProps) {
         setError('Erreur lors de la récupération des produits');
         setLoading(false);
       });
-  }, []);
+  }, [reload]);  // Ajoute `reload` comme dépendance pour recharger les produits lorsqu'il est appelé.
 
   // Filtrer les produits en fonction de filterName
   const filteredProducts = products.filter((product) =>
