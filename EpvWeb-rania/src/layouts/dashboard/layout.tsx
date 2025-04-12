@@ -10,6 +10,8 @@ import { _langs,} from 'src/_mock';
 
 import { Iconify } from 'src/components/iconify';
 
+import Button from '@mui/material/Button'; // For MUI v5
+
 import { Main } from './main';
 import { layoutClasses } from '../classes';
 import { NavMobile, NavDesktop } from './nav';
@@ -76,6 +78,14 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
                   onClose={() => setNavOpen(false)}
                   workspaces={_workspaces}
                 />
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Initialisation</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Ventes</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Achats</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Stock</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Financier</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Etat Comptabes</Button>
+                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Codification Etiquetage Colisage</Button>
+
               </>
             ),
             

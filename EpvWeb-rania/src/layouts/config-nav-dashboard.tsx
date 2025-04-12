@@ -23,24 +23,20 @@ export const navData = [
     path: '/user',
     icon: icon('ic-user'),
   },
-  {
+ /*   
+ {
     title: 'Produits',
     path: '/products',
     icon: icon('ic-cart'),
-    info: (
-      <Label color="error" variant="inverted">
-        +3
-      </Label>
-    ),
-  },{
-    title: 'NewProduits',
+    
+    
+  },  */  
+  
+  {
+    title: 'Produits',
     path: '/newproducts',
     icon: icon('ic-cart'),
-    info: (
-      <Label color="error" variant="inverted">
-        +2
-      </Label>
-    ),
+    
   },
   
   {
