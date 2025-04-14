@@ -6,11 +6,26 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
 
-import { _langs,} from 'src/_mock';
+import { _langs } from 'src/_mock';
 
 import { Iconify } from 'src/components/iconify';
 
 import Button from '@mui/material/Button'; // For MUI v5
+
+import {
+  Menu,
+  MenuItem,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Grid,
+  Tab,
+  TextField,
+  Tabs,
+  Typography,
+  Modal,
+} from '@mui/material';
 
 import { Main } from './main';
 import { layoutClasses } from '../classes';
@@ -78,26 +93,32 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
                   onClose={() => setNavOpen(false)}
                   workspaces={_workspaces}
                 />
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Initialisation</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Ventes</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Achats</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Stock</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Financier</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Etat Comptabes</Button>
-                <Button variant="text" sx={{color: '#134787', padding: '10px 20px',}}>Codification Etiquetage Colisage</Button>
-
+                <CompanySettingsModal />
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Ventes
+                </Button>
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Achats
+                </Button>
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Stock
+                </Button>
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Financier
+                </Button>
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Etat Comptabes
+                </Button>
+                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
+                  Codification Etiquetage Colisage
+                </Button>
               </>
             ),
-            
 
             rightArea: (
               <Box gap={1} display="flex" alignItems="center">
-                
-                
-                
                 <AccountPopover
                   data={[
-                    
                     {
                       label: 'Profile',
                       href: '#',
@@ -147,3 +168,172 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
     </LayoutSection>
   );
 }
+
+const CompanySettingsModal = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 600,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+    borderRadius: 2,
+    maxHeight: '80vh',
+    overflowY: 'auto',
+  };
+
+  return (
+    <div>
+      <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }} onClick={handleOpen}>
+        Initialisation
+      </Button>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="company-settings-modal"
+        aria-describedby="company-settings-form"
+      >
+        <Box sx={modalStyle}>
+          <Typography variant="h6" component="h2" gutterBottom>
+            Paramétrage et Renseignements Société
+          </Typography>
+
+          <hr />
+
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+              Raison Sociale :
+            </Typography>
+            <TextField
+              name="codeBarres"
+              margin="normal"
+              sx={{ flex: 1 }} // Optional: makes the TextField take available space
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+              Adresse :
+            </Typography>
+            <TextField
+              name="adresse"
+              margin="normal"
+              sx={{ flex: 1 }} 
+            />
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+              Ville :
+            </Typography>
+            <TextField
+              name="codeBarres"
+              margin="normal"
+              sx={{ flex: 1 }} 
+              
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+              CP :
+            </Typography>
+            <TextField
+              name="codeBarres"
+              margin="normal"
+              sx={{ flex: 1 ,}} 
+              
+              
+            />
+            
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Téléphone :
+            </Typography>
+            <TextField
+              name="Téléphone"
+              margin="normal"
+              sx={{ flex: 1 }} 
+            />
+            
+          </Box>
+         
+          
+
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+          
+
+
+      <Button 
+        variant="contained" 
+        onClick={handleClose}
+      >
+        Valider et Quitter
+      </Button>
+    </Box>
+        </Box>
+      </Modal>
+    </div>
+  );
+};
+
+export default CompanySettingsModal;
+
+/*  
+
+export default function DropdownButton1() {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleModalOpen = () => {
+    handleMenuClose(); // Close dropdown menu first
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <div>
+      <Button
+        variant="text"
+        onClick={handleClick}
+        sx={{ color: 'black', padding: '10px 20px' }}
+      >
+        Initialisation
+      </Button>
+
+      <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+        <MenuItem onClick={handleModalOpen}>
+          Renseignements Société et Paramétrage
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>Option 2</MenuItem>
+        <MenuItem onClick={handleMenuClose}>Option 3</MenuItem>
+      </Menu>
+
+      <Dialog open={isModalOpen} onClose={handleModalClose}>
+        <DialogTitle>Renseignements Société</DialogTitle>
+        <DialogContent>
+          {/* Put your form or content here */
+/*
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleModalClose}>Annuler</Button>
+          <Button onClick={handleModalClose}>Valider</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+}
+*/

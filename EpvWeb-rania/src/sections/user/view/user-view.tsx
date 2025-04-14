@@ -9,9 +9,25 @@ import Typography from '@mui/material/Typography';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 
+
+
+import {
+  Menu,
+  MenuItem,
+  Grid,
+  Tab,
+  TextField,
+  Tabs,
+  Modal,
+  Checkbox, FormControlLabel 
+} from '@mui/material';
+
 import { _users } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
-
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 import { Iconify } from 'src/components/iconify';
 import { Scrollbar } from 'src/components/scrollbar';
 
@@ -30,8 +46,8 @@ import type { UserProps } from '../user-table-row';
 
 export function UserView() {
   const table = useTable();
-
   const [filterName, setFilterName] = useState('');
+  const [openModal, setOpenModal] = useState(false); // State for modal visibility
 
   const dataFiltered: UserProps[] = applyFilter({
     inputData: _users,
@@ -41,20 +57,89 @@ export function UserView() {
 
   const notFound = !dataFiltered.length && !!filterName;
 
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
   return (
     <DashboardContent>
       <Box display="flex" alignItems="center" mb={5}>
         <Typography variant="h4" flexGrow={1}>
           Utilisateurs
         </Typography>
+
         <Button
           variant="contained"
           color="inherit"
           startIcon={<Iconify icon="mingcute:add-line" />}
+          onClick={handleOpenModal} // Add click handler
         >
           Nouveau Utilisateur
         </Button>
       </Box>
+
+      {/* New User Modal */}
+      <Dialog open={openModal} onClose={handleCloseModal} fullWidth maxWidth="sm">
+        <DialogTitle>Nouvel Utilisateur</DialogTitle>
+        <DialogContent>
+          {/* Add your user creation form here */}
+          <Box sx={{ py: 2 }}>
+          <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Code :
+            </Typography>
+            <TextField
+              name="Téléphone"
+              margin="normal"
+              sx={{ flex: 1, width: '15%' }} 
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Nom :
+            </Typography>
+            <TextField
+              name="nom"
+              margin="normal"
+              sx={{ flex: 1, width: '70%' }} 
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Type :
+            </Typography>
+            <TextField
+              name="type"
+              margin="normal"
+              sx={{ flex: 1, width: '70%' }} 
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Profil :
+            </Typography>
+            <TextField
+              name="profil"
+              margin="normal"
+              sx={{ flex: 1, width: '70%' }} 
+            />
+            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            Point de Vente :
+            </Typography>
+            <TextField
+              name="profil"
+              margin="normal"
+              sx={{ flex: 1, width: '70%'  }} 
+            />
+           <Box display="flex" justifyContent="left">
+  <FormControlLabel
+    control={<Checkbox defaultChecked />}
+    label="Compte Actif"
+  />
+</Box>
+
+        
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal}>Annuler</Button>
+          <Button variant="contained" onClick={handleCloseModal}>
+            Créer
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       <Card>
         <UserTableToolbar
@@ -82,7 +167,7 @@ export function UserView() {
                   )
                 }
                 headLabel={[
-                  { id: 'name', label: 'Nom' },                 
+                  { id: 'name', label: 'Nom' },
                   { id: 'profil', label: 'Profil' },
                   { id: 'role', label: 'Type' },
                   { id: 'company', label: 'Point de Vente', align: 'center' },
