@@ -15,7 +15,7 @@ import { Iconify } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export function SignInView() {
+export function SignUpView() {
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +25,7 @@ export function SignInView() {
   }, [router]);
 
   const handleSignUp = useCallback(() => {
-    router.push('/sign-up');
+    router.push('/');
   }, [router]);
 
   const renderForm = (
@@ -68,7 +68,7 @@ export function SignInView() {
         type="submit"
         color="inherit"
         variant="contained"
-        onClick={handleSignIn}
+        onClick={handleSignUp}
         
       >
         Se Connecter

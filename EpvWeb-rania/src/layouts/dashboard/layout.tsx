@@ -12,6 +12,8 @@ import { Iconify } from 'src/components/iconify';
 
 import Button from '@mui/material/Button'; // For MUI v5
 
+
+
 import {
   Menu,
   MenuItem,
@@ -38,7 +40,8 @@ import { LayoutSection } from '../core/layout-section';
 import { HeaderSection } from '../core/header-section';
 import { AccountPopover } from '../components/account-popover';
 import { LanguagePopover } from '../components/language-popover';
-import { NotificationsPopover } from '../components/notifications-popover';
+import DropdownButtons from '../components/dropdown';
+
 
 // ----------------------------------------------------------------------
 
@@ -93,31 +96,19 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
                   onClose={() => setNavOpen(false)}
                   workspaces={_workspaces}
                 />
-                <CompanySettingsModal />
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Ventes
-                </Button>
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Achats
-                </Button>
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Stock
-                </Button>
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Financier
-                </Button>
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Etat Comptabes
-                </Button>
-                <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }}>
-                  Codification Etiquetage Colisage
-                </Button>
+                <DropdownButtons />
+                
+            
               </>
             ),
 
             rightArea: (
               <Box gap={1} display="flex" alignItems="center">
-                <AccountPopover
+
+                {/** @slot Language popover */ }
+                {  /**   <LanguagePopover data={_langs} /> */ } 
+                   
+                 <AccountPopover
                   data={[
                     {
                       label: 'Profile',
@@ -169,117 +160,8 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
   );
 }
 
-const CompanySettingsModal = () => {
-  const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const modalStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 600,
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 4,
-    borderRadius: 2,
-    maxHeight: '80vh',
-    overflowY: 'auto',
-  };
-
-  return (
-    <div>
-      <Button variant="text" sx={{ color: 'black', padding: '10px 20px' }} onClick={handleOpen}>
-        Initialisation
-      </Button>
-
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="company-settings-modal"
-        aria-describedby="company-settings-form"
-      >
-        <Box sx={modalStyle}>
-          <Typography variant="h6" component="h2" gutterBottom>
-            Paramétrage et Renseignements Société
-          </Typography>
-
-          <hr />
-
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
-              Raison Sociale :
-            </Typography>
-            <TextField
-              name="codeBarres"
-              margin="normal"
-              sx={{ flex: 1 }} // Optional: makes the TextField take available space
-            />
-            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
-              Adresse :
-            </Typography>
-            <TextField
-              name="adresse"
-              margin="normal"
-              sx={{ flex: 1 }} 
-            />
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
-              Ville :
-            </Typography>
-            <TextField
-              name="codeBarres"
-              margin="normal"
-              sx={{ flex: 1 }} 
-              
-            />
-            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
-              CP :
-            </Typography>
-            <TextField
-              name="codeBarres"
-              margin="normal"
-              sx={{ flex: 1 ,}} 
-              
-              
-            />
-            
-            <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
-            Téléphone :
-            </Typography>
-            <TextField
-              name="Téléphone"
-              margin="normal"
-              sx={{ flex: 1 }} 
-            />
-            
-          </Box>
-         
-          
-
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          
-
-
-      <Button 
-        variant="contained" 
-        onClick={handleClose}
-      >
-        Valider et Quitter
-      </Button>
-    </Box>
-        </Box>
-      </Modal>
-    </div>
-  );
-};
-
-export default CompanySettingsModal;
-
-/*  
+ 
 
 export default function DropdownButton1() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -325,8 +207,8 @@ export default function DropdownButton1() {
       <Dialog open={isModalOpen} onClose={handleModalClose}>
         <DialogTitle>Renseignements Société</DialogTitle>
         <DialogContent>
-          {/* Put your form or content here */
-/*
+          {/* Put your form or content here */}
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleModalClose}>Annuler</Button>
@@ -336,4 +218,4 @@ export default function DropdownButton1() {
     </div>
   );
 }
-*/
+
