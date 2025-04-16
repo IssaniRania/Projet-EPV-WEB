@@ -6,6 +6,6 @@
     "\\EPVBackend\\Data",
     "\\EPVBackend\\Model"
   ],
-  "SelectedNode": "\\EPVBackend\\Model\\Utilisateur.cs",
+  "SelectedNode": "\\EPVBackend\\Controllers\\ControllerAuth.cs",
   "PreviewInSolutionExplorer": false
 }

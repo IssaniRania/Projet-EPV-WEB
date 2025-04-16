@@ -20,9 +20,9 @@ export function SignUpView() {
   const router = useRouter();
 
   const [formData, setFormData] = useState({
-    code: '',
-    libelle: '',
-    motdePasse: '',
+    Code: '',
+    Libelle: '',
+    MotdePasse: '',
     repeatPassword: '',
   });
 
@@ -36,48 +36,51 @@ export function SignUpView() {
     router.push('/sign-in');
   }, [router]);
 
-  const handleSignUp = useCallback(() => {
-    router.push('/sign-up');
-  }, [router]);
+
 
   const handleSignUp = useCallback(async () => {
     setLoading(true);
     setError('');
     setSuccess('');
-
-    const { code, libelle, motdePasse, repeatPassword } = formData;
-
-    if (!code || !libelle || !motdePasse) {
+  
+    const { Code, Libelle, MotdePasse, repeatPassword } = formData;
+  
+    if (!Code || !Libelle || !MotdePasse) {
       setError('Tous les champs sont obligatoires.');
       setLoading(false);
       return;
     }
-
-    if (motdePasse !== repeatPassword) {
+  
+    if (MotdePasse !== repeatPassword) {
       setError('Les mots de passe ne correspondent pas.');
       setLoading(false);
       return;
     }
-
+  
     try {
       await axios.post('http://localhost:5088/api/auth/register', {
-        code,
-        libelle,
-        motdePasse,
+        Code,
+        Libelle,
+        MotdePasse,
       });
       setSuccess('Compte créé avec succès.');
-      setFormData({ code: '', libelle: '', motdePasse: '', repeatPassword: '' });
-
+      setFormData({ Code: '', Libelle: '', MotdePasse: '', repeatPassword: '' });
+  
       setTimeout(() => {
         router.push('/sign-in');
       }, 1500);
     } catch (err) {
-      setError(err.response?.data || 'Erreur lors de la création du compte.');
+      setError((err as any).response?.data || 'Erreur lors de la création du compte.');
     } finally {
       setLoading(false);
     }
   }, [formData, router]);
-
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+  
   return (
     <>
       <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
@@ -97,9 +100,9 @@ export function SignUpView() {
       <Box display="flex" flexDirection="column" alignItems="flex-end">
         <TextField
           fullWidth
-          name="libelle"
+          name="Libelle"
           label="Nom complet"
-          value={formData.libelle}
+          value={formData.Libelle}
           onChange={handleChange}
           InputLabelProps={{ shrink: true }}
           sx={{ mb: 3 }}
@@ -107,9 +110,9 @@ export function SignUpView() {
 
         <TextField
           fullWidth
-          name="code"
+          name="Code"
           label="Code"
-          value={formData.code}
+          value={formData.Code}
           onChange={handleChange}
           InputLabelProps={{ shrink: true }}
           sx={{ mb: 3 }}
@@ -117,10 +120,10 @@ export function SignUpView() {
 
         <TextField
           fullWidth
-          name="motdePasse"
+          name="MotdePasse"
           label="Mot de passe"
           type={showPassword ? 'text' : 'password'}
-          value={formData.motdePasse}
+          value={formData.MotdePasse}
           onChange={handleChange}
           InputLabelProps={{ shrink: true }}
           InputProps={{
@@ -141,7 +144,7 @@ export function SignUpView() {
           label="Répéter le mot de passe"
           type={showRepeatPassword ? 'text' : 'password'}
           value={formData.repeatPassword}
-          onChange={handleChange}
+           onChange={handleChange}
           InputLabelProps={{ shrink: true }}
           InputProps={{
             endAdornment: (

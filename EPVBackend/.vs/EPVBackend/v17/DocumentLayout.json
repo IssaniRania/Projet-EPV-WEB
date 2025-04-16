@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\ProjetEPV\\EPVBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EPVBackend\\Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\EPVBackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -66,12 +66,11 @@
               "RelativeToolTip": "EPVBackend\\EPVBackend.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-16T10:31:43.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:31:43.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Utilisateur.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs",
               "RelativeDocumentMoniker": "EPVBackend\\Model\\Utilisateur.cs",
@@ -79,18 +78,17 @@
               "RelativeToolTip": "EPVBackend\\Model\\Utilisateur.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T09:53:57.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:53:57.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ControllerAuth.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
               "RelativeDocumentMoniker": "EPVBackend\\Controllers\\ControllerAuth.cs",
               "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
               "RelativeToolTip": "EPVBackend\\Controllers\\ControllerAuth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEkAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T09:53:30.385Z",
               "EditorCaption": ""
@@ -105,8 +103,7 @@
               "RelativeToolTip": "EPVBackend\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:35:43.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T20:35:43.947Z"
             },
             {
               "$type": "Document",
