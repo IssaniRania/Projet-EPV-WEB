@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EPVBackend",
+    "\\EPVBackend\\Controllers",
+    "\\EPVBackend\\Data",
+    "\\EPVBackend\\Model"
+  ],
+  "SelectedNode": "\\EPVBackend\\Model\\Utilisateur.cs",
+  "PreviewInSolutionExplorer": false
+}
