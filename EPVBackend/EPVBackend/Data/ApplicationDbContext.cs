@@ -8,5 +8,6 @@ namespace EPVBackend.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Produit> Produits { get; set; } // Table Produits
+        public DbSet<Utilisateur> Utilisateur { get; set; }
     }
 }

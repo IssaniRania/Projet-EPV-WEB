@@ -13,7 +13,9 @@ import { DashboardLayout } from 'src/layouts/dashboard';
 export const HomePage = lazy(() => import('src/pages/home'));
 export const BlogPage = lazy(() => import('src/pages/facturation'));
 export const UserPage = lazy(() => import('src/pages/user'));
-export const SignInPage = lazy(() => import('src/pages/sign-in'));
+export const SignInPage = lazy(() => import('src/pages/auth/sign-in'));
+export const ForgotPasswordView = lazy(() => import('src/pages/auth/Forgot-Password-View'));
+export const SignUpView=lazy(()=>import('src/pages/auth/sign-up'));
 export const ProductsPage = lazy(() => import('src/pages/products'));
 export const NewProductPage =lazy(() => import('src/pages/newproducts'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
@@ -59,6 +61,16 @@ export function Router() {
         </AuthLayout>
       ),
     },
+    {path:'forgot-password',element: (
+      <AuthLayout>
+        <ForgotPasswordView />
+      </AuthLayout>
+    ),},
+    {path:'sign-up',element:  (
+      <AuthLayout>
+        <SignUpView />
+      </AuthLayout>
+    ),},
     {
       path: '404',
       element: <Page404 />,
