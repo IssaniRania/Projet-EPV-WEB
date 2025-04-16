@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import {  Menu, MenuItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 
 function DropdownButtons() {
+  const navigate = useNavigate();
+
     const [anchorElInit, setAnchorElInit] = useState<null | HTMLElement>(null);
     const [anchorElVente, setAnchorElVente] = useState<null | HTMLElement>(null);
     const [anchorElAchats, setAnchorElAchats] = useState<null | HTMLElement>(null);
@@ -44,7 +47,7 @@ function DropdownButtons() {
           onClose={handleClose(setAnchorElInit)}
         >
           <MenuItem onClick={handleClose(setAnchorElInit)}>Paramétrage de l&#39;entreprise</MenuItem>
-          <MenuItem onClick={handleClose(setAnchorElInit)}>Mode de Réglement</MenuItem>
+          <MenuItem onClick={() => { handleClose(setAnchorElInit);navigate('/ModeReglement');}}>Mode de Réglement</MenuItem>
           <MenuItem onClick={handleClose(setAnchorElInit)}>TVA</MenuItem>
           <MenuItem onClick={handleClose(setAnchorElInit)}>Autre Taxes et Frais</MenuItem>
           <MenuItem onClick={handleClose(setAnchorElInit)}>Banques</MenuItem>
