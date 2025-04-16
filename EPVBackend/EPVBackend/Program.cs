@@ -29,7 +29,12 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dbContext.Database.Migrate(); // Applique les migrations et crée la base de données si elle n'existe pas
 }
-
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    DbInitializer.Initialize(context);
+}
 // Configurer le pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
