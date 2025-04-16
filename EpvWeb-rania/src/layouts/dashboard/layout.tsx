@@ -7,7 +7,7 @@ import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
 
 import { _langs } from 'src/_mock';
-
+import { Link } from 'react-router-dom'; // assuming react-router
 import { Iconify } from 'src/components/iconify';
 
 import Button from '@mui/material/Button'; // For MUI v5
@@ -41,6 +41,12 @@ import { HeaderSection } from '../core/header-section';
 import { AccountPopover } from '../components/account-popover';
 import { LanguagePopover } from '../components/language-popover';
 import DropdownButtons from '../components/dropdown';
+import SettingsButton from '../components/settings';
+import QuestionMarkButton from '../components/qm';
+import ThemeModeToggleButton from '../components/themebtn';
+
+
+
 
 
 // ----------------------------------------------------------------------
@@ -59,6 +65,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
   const [navOpen, setNavOpen] = useState(false);
 
   const layoutQuery: Breakpoint = 'lg';
+  
 
   return (
     <LayoutSection
@@ -103,10 +110,13 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
             ),
 
             rightArea: (
-              <Box gap={1} display="flex" alignItems="center">
+              <Box  display="flex" alignItems="center" >
 
-                {/** @slot Language popover */ }
-                {  /**   <LanguagePopover data={_langs} /> */ } 
+                <Searchbar  />
+                <ThemeModeToggleButton />
+                <QuestionMarkButton />
+                <SettingsButton />
+                <LanguagePopover data={_langs} /> 
                    
                  <AccountPopover
                   data={[
@@ -141,7 +151,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
        * Style
        *************************************** */
       cssVars={{
-        '--layout-nav-vertical-width': '300px',
+        '--layout-nav-vertical-width': '280px',
         '--layout-dashboard-content-pt': theme.spacing(1),
         '--layout-dashboard-content-pb': theme.spacing(8),
         '--layout-dashboard-content-px': theme.spacing(5),
@@ -218,4 +228,7 @@ export default function DropdownButton1() {
     </div>
   );
 }
+
+
+
 

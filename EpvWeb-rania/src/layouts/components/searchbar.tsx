@@ -34,7 +34,7 @@ export function Searchbar({ sx, ...other }: BoxProps) {
     <ClickAwayListener onClickAway={handleClose}>
       <div>
         {!open && (
-          <IconButton onClick={handleOpen}>
+          <IconButton onClick={handleOpen} sx={{ fontSize: 20, color: '#134787',marginLeft: 1 }}>
             <Iconify icon="eva:search-fill" />
           </IconButton>
         )}

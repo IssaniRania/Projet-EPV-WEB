@@ -54,7 +54,7 @@ function DropdownButtons() {
 
 
        {/* VENTES Button + Menu */}
-       <Button
+       {/* <Button
           variant="text"
           sx={{ color: 'black', padding: '10px 20px' }}
           onClick={handleClick(setAnchorElVente)}
@@ -75,7 +75,7 @@ function DropdownButtons() {
       
         
         {/* ACHATS Button + Menu */}
-        <Button
+       {/* } <Button
           variant="text"
           sx={{ color: 'black', padding: '10px 20px' }}
           onClick={handleClick(setAnchorElAchats)}

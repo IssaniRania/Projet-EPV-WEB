@@ -19,8 +19,7 @@ export type WorkspacesPopoverProps = ButtonBaseProps & {
   data?: {
     id: string;
     name: string;
-    logo: string;
-    plan: string;
+
   }[];
 };
 
@@ -72,7 +71,7 @@ export function WorkspacesPopover({ data = [], sx, ...other }: WorkspacesPopover
         }}
         {...other}
       >
-        {renderAvatar(workspace?.name, workspace?.logo)}
+      
 
         <Box
           gap={1}
@@ -82,7 +81,7 @@ export function WorkspacesPopover({ data = [], sx, ...other }: WorkspacesPopover
           sx={{ typography: 'body2', fontWeight: 'fontWeightSemiBold' }}
         >
           {workspace?.name}
-          {renderLabel(workspace?.plan)}
+          
         </Box>
 
         <Iconify width={16} icon="carbon:chevron-sort" sx={{ color: 'text.disabled' }} />
@@ -114,13 +113,13 @@ export function WorkspacesPopover({ data = [], sx, ...other }: WorkspacesPopover
               selected={option.id === workspace?.id}
               onClick={() => handleChangeWorkspace(option)}
             >
-              {renderAvatar(option.name, option.logo)}
+            
 
               <Box component="span" sx={{ flexGrow: 1 }}>
                 {option.name}
               </Box>
 
-              {renderLabel(option.plan)}
+              
             </MenuItem>
           ))}
         </MenuList>

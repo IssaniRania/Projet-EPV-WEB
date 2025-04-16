@@ -25,7 +25,7 @@ export function SignUpView() {
   }, [router]);
 
   const handleSignUp = useCallback(() => {
-    router.push('/');
+    router.push('/sign-up');
   }, [router]);
 
   const renderForm = (
@@ -79,7 +79,7 @@ export function SignUpView() {
   return (
     <>
       <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
-        <Typography variant="h5">Sign in</Typography>
+        <Typography variant="h5">Créer un compte</Typography>
         <Typography variant="body2" color="text.secondary">
           Tu n’as pas de compte ?
           <Link variant="subtitle2" onClick={handleSignUp} sx={{ ml: 0.5 }}>

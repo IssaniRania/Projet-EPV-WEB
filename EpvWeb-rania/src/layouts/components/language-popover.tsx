@@ -57,6 +57,7 @@ export function LanguagePopover({ data = [], sx, ...other }: LanguagePopoverProp
         sx={{
           width: 40,
           height: 40,
+          marginRight: 2 ,
           ...(openPopover && { bgcolor: 'action.selected' }),
           ...sx,
         }}

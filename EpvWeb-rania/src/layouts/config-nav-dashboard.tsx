@@ -12,17 +12,20 @@ export const navData = [
     title: 'Tableau de bord',
     path: '/',
     icon: icon('ic-analytics'),
+    
+
   },
   {
-    title: 'Facturation',
+    title: 'Ventes',
     path: '/blog',
     icon: icon('ic-blog'),
   },
   {
-    title: 'Utilisateurs',
-    path: '/user',
-    icon: icon('ic-user'),
+    title: 'Achats',
+    path: '/products',
+    icon: icon('ic-cart'),
   },
+ 
  /*   
  {
     title: 'Produits',
@@ -37,6 +40,11 @@ export const navData = [
     path: '/newproducts',
     icon: icon('ic-cart'),
     
+  },
+  {
+    title: 'Utilisateurs',
+    path: '/user',
+    icon: icon('ic-user'),
   },
   
   {

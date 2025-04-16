@@ -42,7 +42,7 @@ export function NavUpgrade({ sx, ...other }: StackProps) {
         variant="contained"
         color="inherit"
       >
-        Avoir la version complete
+        Avoir la Version Complete
       </Button>
     </Box>
   );
