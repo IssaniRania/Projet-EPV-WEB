@@ -1,94 +1,181 @@
 import { useState, useCallback } from 'react';
+import axios from 'axios';
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {
+  Box,
+  Link,
+  TextField,
+  IconButton,
+  Typography,
+  InputAdornment,
+  Alert,
+} from '@mui/material';
+
 import LoadingButton from '@mui/lab/LoadingButton';
-import InputAdornment from '@mui/material/InputAdornment';
 
 import { useRouter } from 'src/routes/hooks';
-
 import { Iconify } from 'src/components/iconify';
-
-// ----------------------------------------------------------------------
 
 export function SignUpView() {
   const router = useRouter();
 
+  const [formData, setFormData] = useState({
+    code: '',
+    libelle: '',
+    motdePasse: '',
+    repeatPassword: '',
+  });
+
   const [showPassword, setShowPassword] = useState(false);
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleSignIn = useCallback(() => {
-    router.push('/');
+    router.push('/sign-in');
   }, [router]);
 
-  const handleSignUp = useCallback(() => {
-    router.push('/');
-  }, [router]);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const renderForm = (
-    <Box display="flex" flexDirection="column" alignItems="flex-end">
-      <TextField
-        fullWidth
-        name="email"
-        label="Email address"
-        defaultValue=""
-        InputLabelProps={{ shrink: true }}
-        sx={{ mb: 3 }}
-      />
+  const handleSignUp = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    setSuccess('');
 
-      <Link variant="body2" color="inherit" sx={{ mb: 1.5 }}>
-      Mot de Passe Oublié ?
-      </Link>
+    const { code, libelle, motdePasse, repeatPassword } = formData;
 
-      <TextField
-        fullWidth
-        name="password"
-        label="Password"
-        defaultValue=""
-        InputLabelProps={{ shrink: true }}
-        type={showPassword ? 'text' : 'password'}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                <Iconify icon={showPassword ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        sx={{ mb: 3 }}
-      />
+    if (!code || !libelle || !motdePasse) {
+      setError('Tous les champs sont obligatoires.');
+      setLoading(false);
+      return;
+    }
 
-      <LoadingButton
-        fullWidth
-        size="large"
-        type="submit"
-        color="inherit"
-        variant="contained"
-        onClick={handleSignUp}
-        
-      >
-        Se Connecter
-      </LoadingButton>
-    </Box>
-  );
+    if (motdePasse !== repeatPassword) {
+      setError('Les mots de passe ne correspondent pas.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:5088/api/auth/register', {
+        code,
+        libelle,
+        motdePasse,
+      });
+      setSuccess('Compte créé avec succès.');
+      setFormData({ code: '', libelle: '', motdePasse: '', repeatPassword: '' });
+
+      setTimeout(() => {
+        router.push('/sign-in');
+      }, 1500);
+    } catch (err) {
+      setError(err.response?.data || 'Erreur lors de la création du compte.');
+    } finally {
+      setLoading(false);
+    }
+  }, [formData, router]);
 
   return (
     <>
-      <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
-        <Typography variant="h5">Sign in</Typography>
+      <Box
+        gap={1.5}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        sx={{ mb: 5 }}
+      >
+        <Typography variant="h5">Créer un compte</Typography>
         <Typography variant="body2" color="text.secondary">
-          Tu n’as pas de compte ?
-          <Link variant="subtitle2" onClick={handleSignUp} sx={{ ml: 0.5 }}>
-          Créer un Compte
+          Tu as déjà un compte ?
+          <Link
+            variant="subtitle2"
+            onClick={handleSignIn}
+            sx={{ ml: 0.5, cursor: 'pointer' }}
+          >
+            Se connecter
           </Link>
         </Typography>
       </Box>
 
-      {renderForm}
+      <Box display="flex" flexDirection="column" alignItems="flex-end">
+        <TextField
+          fullWidth
+          name="libelle"
+          label="Nom complet"
+          value={formData.libelle}
+          onChange={handleChange}
+          InputLabelProps={{ shrink: true }}
+          sx={{ mb: 3 }}
+        />
+
+        <TextField
+          fullWidth
+          name="code"
+          label="Code"
+          value={formData.code}
+          onChange={handleChange}
+          InputLabelProps={{ shrink: true }}
+          sx={{ mb: 3 }}
+        />
+
+        <TextField
+          fullWidth
+          name="motdePasse"
+          label="Mot de passe"
+          type={showPassword ? 'text' : 'password'}
+          value={formData.motdePasse}
+          onChange={handleChange}
+          InputLabelProps={{ shrink: true }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                  <Iconify icon={showPassword ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          sx={{ mb: 3 }}
+        />
+
+        <TextField
+          fullWidth
+          name="repeatPassword"
+          label="Répéter le mot de passe"
+          type={showRepeatPassword ? 'text' : 'password'}
+          value={formData.repeatPassword}
+          onChange={handleChange}
+          InputLabelProps={{ shrink: true }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={() => setShowRepeatPassword(!showRepeatPassword)} edge="end">
+                  <Iconify icon={showRepeatPassword ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          sx={{ mb: 3 }}
+        />
+
+        {error && <Alert severity="error" sx={{ mb: 2, width: '100%' }}>{error}</Alert>}
+        {success && <Alert severity="success" sx={{ mb: 2, width: '100%' }}>{success}</Alert>}
+
+        <LoadingButton
+          fullWidth
+          size="large"
+          type="submit"
+          color="primary"
+          variant="contained"
+          loading={loading}
+          onClick={handleSignUp}
+        >
+          Créer un compte
+        </LoadingButton>
+      </Box>
     </>
   );
 }

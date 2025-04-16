@@ -65,7 +65,9 @@ const [password, setPassword] = useState('');
       handleSignIn(); // déclenche le bouton
     }
   };
-
+  const handleSignUp = useCallback(() => {
+    router.push('/sign-up');
+  }, [router]);
   const renderForm = (
     <Box display="flex" flexDirection="column" alignItems="flex-end">
       <TextField
@@ -128,7 +130,7 @@ const [password, setPassword] = useState('');
         <Typography variant="h5">Se connecter</Typography>
         <Typography variant="body2" color="text.secondary">
           Tu n’as pas de compte ?
-          <Link variant="subtitle2" sx={{ ml: 0.5 }}>
+          <Link variant="subtitle2" onClick={handleSignUp} sx={{ ml: 0.5 }}>
           Créer un Compte
           </Link>
         </Typography>
