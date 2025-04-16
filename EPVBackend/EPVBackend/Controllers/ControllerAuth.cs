@@ -66,7 +66,7 @@ namespace EPVBackend.Controllers
            // user.Actif = true;
             user.CodeProfil = "01";
             user.NomProfil = "Administrateur";
-            user.MotdePasse = BCrypt.Net.BCrypt.HashPassword(user.MotdePasse);
+           // user.MotdePasse = BCrypt.Net.BCrypt.HashPassword(user.MotdePasse);
 
             _context.Utilisateur.Add(user);
             await _context.SaveChangesAsync();
