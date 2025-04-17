@@ -10,7 +10,7 @@ const SettingsButton = () => {
 
   return (
     <Tooltip title="Settings">
-      <IconButton onClick={handleClick}  sx={{ fontSize: 20, color: '#134787',marginRight: 1, }}>
+      <IconButton onClick={handleClick}  sx={{ fontSize: 20, color: '#A1A5B7',marginRight: 1, }}>
         <SettingsIcon sx={{ fontSize: 'inherit' }} />
       </IconButton>
     </Tooltip>
