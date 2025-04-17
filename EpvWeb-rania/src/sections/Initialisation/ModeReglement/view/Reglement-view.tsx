@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import {
    Dialog, DialogActions, DialogContent, DialogTitle,
-  TextField, Toolbar, OutlinedInput, InputAdornment,FormControlLabel,Checkbox,FormControl,InputLabel,Select
+  TextField,FormControlLabel,Checkbox,FormControl,InputLabel,Select
 } from '@mui/material';
 import { _product } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
@@ -51,6 +51,14 @@ export function ReglementView() {
     Tiroir: false,
     MoyenPaiement: '',
   });
+  const resetForm = () => {
+    setNewReglement({
+      Code: '',
+      Libelle: '',
+      Tiroir: false,
+      MoyenPaiement: '',
+    });
+  };
   
    const [page, setPage] = useState(0);
    const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -61,7 +69,7 @@ useEffect(() => {
   const fetchMoyensPaiement = async () => {
     try {
       const response = await axios.get('http://localhost:5088/api/Initialisation/');
-      console.log("Moyens de paiement récupérés :", response.data); // 👈 Ajoute ça
+      console.log("Moyens de paiement récupérés :", response.data); 
       setMoyensPaiement(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement des moyens de paiement :", error);
@@ -72,7 +80,9 @@ useEffect(() => {
 
    // Open modal when the "Nouveau Article" button is clicked
    const handleOpenModal = () => {
+    resetForm(); 
      setOpenModal(true);
+   
    };
  
    // Close the modal (e.g., when the user clicks cancel)
@@ -88,9 +98,25 @@ useEffect(() => {
        [name]: value,
      }));
    };
- 
+ // Vérification si le code existe déjà
+const checkIfCodeExists = async (code: string) => {
+  try {
+    const response = await axios.get(`http://localhost:5088/api/ModeReglement/${code}`);
+    return response.data; // Si l'enregistrement existe déjà, les données seront retournées
+  } catch (error) {
+    console.error("Erreur lors de la vérification du code :", error);
+    return null; // Si une erreur se produit ou aucun enregistrement n'est trouvé
+  }
+};
+
    // Handle form submission (e.g., save the new product to the list or database)
    const handleSubmit = async () => {
+    const existingReglement = await checkIfCodeExists(newReglement.Code);
+  if (existingReglement) {
+    alert("Ce code existe déjà. Veuillez en choisir un autre.");
+    return; // Ne pas procéder à l'ajout si le code existe déjà
+  }
+
     const reglementToSend = {
       Code: newReglement.Code,
       Libelle: newReglement.Libelle,
@@ -101,6 +127,8 @@ useEffect(() => {
     try {
       await axios.post("http://localhost:5088/api/ModeReglement", reglementToSend);
       console.log("Succès !");
+      resetForm();
+    setOpenModal(false);
     } catch (error) {
       console.error("Erreur lors de l'ajout du produit :", error);
     }
@@ -133,27 +161,8 @@ const fetchProduits = async () => {
         </Button>
       </Box>
       <Card>
-      {/* <input
-        type="text"
-        value={filterName}
-        onChange={handleSearch}
-        placeholder="Rechercher par libellé"
-      /> */}
-      <Toolbar sx={{ height: 96,display: 'flex', justifyContent: 'space-between', p: (theme) => theme.spacing(0, 1, 0, 3)}}>
-          <OutlinedInput
-            fullWidth
-            value={filterName}
-            onChange={handleSearch}
-            placeholder="Rechercher Mode Reglement..."
-            startAdornment={
-              <InputAdornment position="start">
-                <Iconify width={20} icon="eva:search-fill" sx={{ color: 'text.disabled' }} />
-              </InputAdornment>
-            }
-            sx={{ maxWidth: 320 }}
-          />
-          <Typography>Nombre des Articles : 0</Typography>
-        </Toolbar>
+
+      
       {/* Appel à ProductTable en passant filterName */}
       <ReglementTable filterName={filterName} reload={fetchProduits} />
     
