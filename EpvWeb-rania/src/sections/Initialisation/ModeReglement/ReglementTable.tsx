@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef } from 'react';
 import axios from 'axios';
 import {
   Typography,Toolbar, OutlinedInput, InputAdornment,Table, TableBody, TableRow, TableCell, TableHead, IconButton, Popover, MenuItem, MenuList, menuItemClasses, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, FormControlLabel, Checkbox
@@ -7,6 +7,7 @@ import {
 
 
 import { Iconify } from 'src/components/iconify';
+import { _libelle } from 'src/_mock';
 
 type ProductTableProps = {
   filterName: string;
@@ -83,7 +84,8 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
   useEffect(() => {
     const fetchMoyensPaiement = async () => {
       try {
-        const response = await axios.get('http://localhost:5088/api/MoyenPaiement');
+        console.log("test");
+        const response = await axios.get('http://localhost:5088/api/Initialisation/');
         setMoyensPaiement(response.data);
       } catch (err) {
         console.error("Erreur lors du chargement des moyens de paiement :", err);
@@ -148,6 +150,17 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilteName(event.target.value);
   };
+  const handleEnterKeyFocus = (nextRef: React.RefObject<any>) => (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' && nextRef.current) {
+      event.preventDefault(); // pour éviter de soumettre le formulaire si c'est dans un <form>
+      nextRef.current.focus();
+    }
+  };
+  const codeRef = useRef<HTMLInputElement>(null);
+const libelleRef = useRef<HTMLInputElement>(null);
+const moyenPaiementRef = useRef<HTMLInputElement>(null);
+const btnModifierRef = useRef<HTMLButtonElement>(null);
+
   
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
@@ -264,6 +277,8 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
             name="code"
             value={newReglement.code}
             onChange={handleInputChange}
+            inputRef={codeRef}
+            onKeyDown={handleEnterKeyFocus(libelleRef)}
             fullWidth
             margin="normal"
             disabled={isEditMode}
@@ -273,15 +288,19 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
             name="libelle"
             value={newReglement.libelle}
             onChange={handleInputChange}
+            inputRef={libelleRef}
+            onKeyDown={handleEnterKeyFocus(moyenPaiementRef)}
             fullWidth
             margin="normal"
           />
           <TextField
                 select
                 label="Moyen de Paiement"
-                name="MoyenPaiement"
-                value={newReglement.moyenPaiement|| ""} // ici c’est le libellé
+                name="moyenPaiement"
+                inputRef={moyenPaiementRef}
+                value={newReglement.moyenPaiement|| ""}
                 onChange={handleInputChange}
+                onKeyDown={handleEnterKeyFocus(btnModifierRef)}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -312,7 +331,7 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
           <Button onClick={handleCloseModal} color="primary">
             Annuler
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button ref={btnModifierRef} onClick={handleSubmit} color="primary">
             {isEditMode ? "Modifier" : "Ajouter"}
           </Button>
         </DialogActions>

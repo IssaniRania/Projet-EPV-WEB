@@ -1,4 +1,4 @@
-import { useState,useEffect} from 'react';
+import { useState,useEffect,useRef} from 'react';
 import axios from 'axios';
 
 import Box from '@mui/material/Box';
@@ -143,7 +143,16 @@ const fetchProduits = async () => {
   }
 };
    
-  
+  const handleEnterKeyFocus = (nextRef: React.RefObject<any>) => (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' && nextRef.current) {
+      event.preventDefault(); // pour éviter de soumettre le formulaire si c'est dans un <form>
+      nextRef.current.focus();
+    }
+  };
+  const codeRef = useRef<HTMLInputElement>(null);
+const libelleRef = useRef<HTMLInputElement>(null);
+const moyenPaiementRef = useRef<HTMLInputElement>(null);
+const btnAjouterRef = useRef<HTMLButtonElement>(null);
 
   return (
     <DashboardContent>
@@ -176,6 +185,8 @@ const fetchProduits = async () => {
                     name="Code"
                     value={newReglement.Code}
                     onChange={handleInputChange} 
+                    inputRef={codeRef}
+                    onKeyDown={handleEnterKeyFocus(libelleRef)}
                     fullWidth
                     margin="normal"
                   />
@@ -184,6 +195,8 @@ const fetchProduits = async () => {
                     name="Libelle"
                     value={newReglement.Libelle}
                     onChange={handleInputChange}
+                    inputRef={libelleRef}
+                    onKeyDown={handleEnterKeyFocus(moyenPaiementRef)}
                     fullWidth
                     margin="normal"
                   />
@@ -191,8 +204,10 @@ const fetchProduits = async () => {
                 select
                 label="Moyen de Paiement"
                 name="MoyenPaiement"
+                inputRef={moyenPaiementRef}
                 value={newReglement.MoyenPaiement || ""} // ici c’est le libellé
                 onChange={handleInputChange}
+                onKeyDown={handleEnterKeyFocus(btnAjouterRef)}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -225,7 +240,7 @@ const fetchProduits = async () => {
                     Annuler
                   </Button>
                   
-                  <Button onClick={handleSubmit} color="primary">
+                  <Button ref={btnAjouterRef} onClick={handleSubmit} color="primary">
                     Ajouter
                   </Button>
                 </DialogActions>
