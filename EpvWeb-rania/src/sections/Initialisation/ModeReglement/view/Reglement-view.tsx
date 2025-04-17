@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import {
    Dialog, DialogActions, DialogContent, DialogTitle,
-  TextField, Toolbar, OutlinedInput, InputAdornment,FormControlLabel,Checkbox
+  TextField, Toolbar, OutlinedInput, InputAdornment,FormControlLabel,Checkbox,FormControl,InputLabel,Select
 } from '@mui/material';
 import { _product } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
@@ -27,8 +27,8 @@ interface MoyenPaiement {
 interface NewReglement {
   Code: string;
   Libelle: string;
-  Tiroir: string;
-  MoyenPaiement: string;  // Cette ligne fait en sorte que `MoyenPaiement` est un Code, donc une string
+  Tiroir: boolean;
+  MoyenPaiement: string;  
 }
 
 export function ReglementView() {
@@ -48,7 +48,7 @@ export function ReglementView() {
    const [newReglement, setNewReglement] = useState<NewReglement>({
     Code: '',
     Libelle: '',
-    Tiroir: '',
+    Tiroir: false,
     MoyenPaiement: '',
   });
   
@@ -91,21 +91,24 @@ useEffect(() => {
  
    // Handle form submission (e.g., save the new product to the list or database)
    const handleSubmit = async () => {
+    const reglementToSend = {
+      Code: newReglement.Code,
+      Libelle: newReglement.Libelle,
+      Tiroir: newReglement.Tiroir,
+      MoyenPaiement: newReglement.MoyenPaiement, // uniquement le libellé
+    };
+  
     try {
-        const response = await axios.post("http://localhost:5088/api/produit", newReglement);
-        
-        if (response.status === 201) { // Vérifie si la requête a réussi
-            console.log("Produit ajouté avec succès !");
-            handleCloseModal(); // Ferme le modal après l'ajout
-            setOpenModal(false); // Assure la fermeture du modal
-        }
+      await axios.post("http://localhost:5088/api/ModeReglement", reglementToSend);
+      console.log("Succès !");
     } catch (error) {
-        console.error("Erreur lors de l'ajout du produit :", error);
+      console.error("Erreur lors de l'ajout du produit :", error);
     }
-};
+  };
+  
 const fetchProduits = async () => {
   try {
-    const response = await axios.get('http://localhost:5088/api/produit');
+    const response = await axios.get('http://localhost:5088/api/ModeReglement');
     setNewReglement(response.data);
   } catch (error) {
     console.error("Erreur lors de la récupération des produits", error);
@@ -163,7 +166,7 @@ const fetchProduits = async () => {
                     label="Code"
                     name="Code"
                     value={newReglement.Code}
-                    onChange={handleInputChange} // Update the state when input changes
+                    onChange={handleInputChange} 
                     fullWidth
                     margin="normal"
                   />
@@ -179,40 +182,40 @@ const fetchProduits = async () => {
                 select
                 label="Moyen de Paiement"
                 name="MoyenPaiement"
-                value={newReglement.MoyenPaiement}
-                onChange={handleInputChange} // Bien géré ci-dessous
+                value={newReglement.MoyenPaiement || ""} // ici c’est le libellé
+                onChange={handleInputChange}
                 fullWidth
                 margin="normal"
+                variant="outlined"
               >
-                {moyensPaiement.map((option, index) => (
-                  <MenuItem key={index} value={option.code}>
+                {moyensPaiement.map((option) => (
+                  <MenuItem key={option.code} value={option.libelle}>
                     {option.libelle}
                   </MenuItem>
                 ))}
               </TextField>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={!!newReglement.Tiroir}
+                    onChange={(e) =>
+                      setNewReglement((prev) => ({
+                        ...prev,
+                        Tiroir: e.target.checked
+                      }))
+                    }
+                  />
+                }
+                label="Ouverture Tiroir-Caisse"
+              />
 
-<FormControlLabel
-  control={
-    <Checkbox
-      checked={newReglement.Tiroir === 'true'}
-      onChange={(e) =>
-        setNewReglement((prev) => ({
-          ...prev,
-          Tiroir: e.target.checked ? 'true' : 'false',
-        }))
-      }
-    />
-  }
-  label="Ouverture Tiroir-Caisse"
-/>
-                  
                 </DialogContent>
                 <DialogActions>
-                  {/* Cancel button closes the modal */}
+                 
                   <Button onClick={handleCloseModal} color="primary">
                     Annuler
                   </Button>
-                  {/* Submit button calls handleSubmit to save the new product */}
+                  
                   <Button onClick={handleSubmit} color="primary">
                     Ajouter
                   </Button>

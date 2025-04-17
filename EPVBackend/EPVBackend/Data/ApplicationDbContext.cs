@@ -10,5 +10,6 @@ namespace EPVBackend.Data
         public DbSet<Produit> Produits { get; set; }
         public DbSet<Utilisateur> Utilisateur { get; set; }
         public DbSet<MoyenPaiement> MoyenPaiement { get; set; }
+        public DbSet<ModeReglement> ModeReglement { get; set; }
     }
 }

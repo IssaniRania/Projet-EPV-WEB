@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Controllers\\Initialisation",
+    "\\Data",
+    "\\Model",
+    "\\Model\\Initialisation"
+  ],
+  "SelectedNode": "\\Model\\Initialisation\\MoyenPaiement.cs",
+  "PreviewInSolutionExplorer": false
+}
