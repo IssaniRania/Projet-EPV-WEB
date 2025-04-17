@@ -10,7 +10,7 @@ const QuestionMarkButton = () => {
 
   return (
     <Tooltip title="Aide" arrow>
-      <IconButton onClick={handleClick} color="primary" sx={{ fontSize: 20, color: '#134787',marginLeft: 1 ,
+      <IconButton onClick={handleClick} color="primary" sx={{ fontSize: 20, color: '#A1A5B7',marginLeft: 1 ,
  }}>
         <HelpOutlineIcon sx={{ fontSize: 'inherit' }} />
       </IconButton>

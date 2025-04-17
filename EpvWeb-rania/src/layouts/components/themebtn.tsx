@@ -23,7 +23,7 @@ const ThemeModeToggleButton: React.FC = () => {
 
   return (
     <Tooltip title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
-      <IconButton onClick={handleToggleTheme} sx={{ fontSize: 20, color: '#134787' }}>
+      <IconButton onClick={handleToggleTheme} sx={{ fontSize: 20, color: '#A1A5B7' }}>
         {isDarkMode ? (
           <Brightness4Icon sx={{ fontSize: 'inherit' }} />
         ) : (
