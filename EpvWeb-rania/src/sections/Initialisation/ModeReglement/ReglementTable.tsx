@@ -1,7 +1,7 @@
 import React, { useEffect, useState ,useRef } from 'react';
 import axios from 'axios';
 import {
-  Typography,Toolbar, OutlinedInput, InputAdornment,Table, TableBody, TableRow, TableCell, TableHead, IconButton, Popover, MenuItem, MenuList, menuItemClasses, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, FormControlLabel, Checkbox
+ Box,Typography,Toolbar, OutlinedInput, InputAdornment,Table, TableBody, TableRow, TableCell, TableHead, IconButton, Popover, MenuItem, MenuList, menuItemClasses, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, FormControlLabel, Checkbox
 } from '@mui/material';
 
 
@@ -167,6 +167,17 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
+<Box
+      display="flex"
+      justifyContent="center"
+      height="70vh" // prend toute la hauteur de l'écran
+    >
+      <Box
+        p={4}
+        width="70%"
+        bgcolor="#FFF"
+        borderRadius={2}
+      >
     <Toolbar sx={{ height: 96,display: 'flex', justifyContent: 'space-between', p: (theme) => theme.spacing(0, 1, 0, 3)}}>
           <OutlinedInput
             fullWidth
@@ -180,7 +191,7 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
             }
             sx={{ maxWidth: 320 }}
           />
-          <Typography>Nombre des Articles : {filteredProducts.length}</Typography>
+          <Typography sx={{ maxWidth: 520 , marginLeft:10 }}>Nombre des Articles : {filteredProducts.length}</Typography>
           
         </Toolbar>
       <Table>
@@ -217,7 +228,7 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
           )}
         </TableBody>
       </Table>
-
+      
       <Popover
         open={openPopover}
         anchorEl={anchorEl}
@@ -266,7 +277,7 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
           </MenuItem>
         </MenuList>
       </Popover>
-
+   
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle>
           {isEditMode ? "Modifier le Mode de Règlement" : "Ajouter un Nouveau Mode Reglement"}
@@ -336,6 +347,8 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
           </Button>
         </DialogActions>
       </Dialog>
+      </Box>
+      </Box>
     </>
   );
 }
