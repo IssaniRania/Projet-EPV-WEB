@@ -61,8 +61,7 @@ function DropdownButtons() {
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/ModeReglement')}>
           Mode de Réglement
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>TVA</MenuItem>
-        <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>Autre Taxes et Frais</MenuItem>
+        <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/TVA')}>TVA / Taxes</MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>Banques</MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>Personalisation</MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>Compteurs</MenuItem>

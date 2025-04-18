@@ -20,6 +20,7 @@ export const SignUpView=lazy(()=>import('src/pages/auth/sign-up'));
 //----------------------------------------------------------------------
 export const ReglementView=lazy(()=>import('src/pages/Initialisation/Reglement-View'));
 export const ParametrageView=lazy(()=>import('src/pages/Initialisation/Parametrage-View'));
+export const TvaView=lazy(()=>import('src/pages/Initialisation/tva-view'));
 
 
 export const ProductsPage = lazy(() => import('src/pages/products'));
@@ -56,8 +57,10 @@ export function Router() {
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'newproducts', element: <NewProductPage />},
+
          {path:'ModeReglement',element: <ReglementView />},
          {path:'Parametrage',element: <ParametrageView />},
+         {path:'TVA',element: <TvaView />},
 
         { path: 'blog', element: <BlogPage /> },
       ],
