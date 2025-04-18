@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
 import InputAdornment from '@mui/material/InputAdornment';
+import Alert from '@mui/material/Alert';
+
 import axios from 'axios';
 import { useRouter } from 'src/routes/hooks';
 
@@ -20,8 +22,9 @@ export function SignInView() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [code, setCode] = useState('');
-const [password, setPassword] = useState('');
-
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
   const [erreur, setErreur] = useState('');
 
@@ -29,7 +32,12 @@ const [password, setPassword] = useState('');
   //   router.push('/');
   // }, [router]);
   const passwordRef = useRef<HTMLInputElement>(null);
+
+
   const handleSignIn = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    setSuccess('');
     try {
       const response = await fetch('http://localhost:5088/api/auth/login', {
         method: 'POST',
@@ -39,17 +47,20 @@ const [password, setPassword] = useState('');
         body: JSON.stringify({ Code:code, motdePasse: password }),
       });
       if (response.ok) {
-        alert("Connexion réussie" );
-        router.push('/'); // Redirige vers la page principale
+        setSuccess("Connexion réussie" );
+        router.push('/'); 
       } else if (response.status === 401) {
-        alert("Code ou mot de passe n'est pas valide.");
+        setError("Votre code ou mot de passe est incorrect.");
+
       } else {
-        alert("Une erreur s'est produite.");
+        setError("Une erreur s'est produite.");
       }
       // console.log('Connexion réussie :', response.data);
       // router.push('/'); // rediriger vers page d'accueil
-    } catch (error) {
-      console.error('Échec de la connexion :', error.response?.data || error.message);
+    } catch (err) {
+      setError((err as any).response?.data || 'Votre code ou mot de passe est incorrect.');
+    } finally {
+      setLoading(false);
     }
   }, [code, password, router]);
 
@@ -110,12 +121,15 @@ const [password, setPassword] = useState('');
  >
       Mot de Passe Oublié ?
       </Link>
+        {error && <Alert severity="error" sx={{ mb: 2, width: '100%' }}>{error}</Alert>}
+        {success && <Alert severity="success" sx={{ mb: 2, width: '100%' }}>{success}</Alert>}
       <LoadingButton
         fullWidth
         size="large"
         type="submit"
         color="inherit"
         variant="contained"
+        loading={loading}
         onClick={handleSignIn}
         
       >
