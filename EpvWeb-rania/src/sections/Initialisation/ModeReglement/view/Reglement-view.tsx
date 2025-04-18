@@ -169,12 +169,12 @@ const btnAjouterRef = useRef<HTMLButtonElement>(null);
           Nouveau Article
         </Button>
       </Box>
-      <Card>
-
+      
+      
       
       {/* Appel à ProductTable en passant filterName */}
-      <ReglementTable filterName={filterName} reload={fetchProduits} />
-    
+          <ReglementTable filterName={filterName} reload={fetchProduits} />
+       
               {/* Modal Dialog for creating a new product */}
               <Dialog open={openModal} onClose={handleCloseModal}>
                 <DialogTitle>Ajouter un Nouveau Mode Reglement</DialogTitle>
@@ -245,7 +245,9 @@ const btnAjouterRef = useRef<HTMLButtonElement>(null);
                   </Button>
                 </DialogActions>
               </Dialog>
-            </Card>
+             
+         
+            
     </DashboardContent>
   );
 }
