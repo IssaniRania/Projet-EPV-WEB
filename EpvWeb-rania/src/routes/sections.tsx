@@ -20,7 +20,7 @@ export const SignUpView=lazy(()=>import('src/pages/auth/sign-up'));
 //----------------------------------------------------------------------
 export const ReglementView=lazy(()=>import('src/pages/Initialisation/Reglement-View'));
 export const ParametrageView=lazy(()=>import('src/pages/Initialisation/Parametrage-View'));
-export const TvaView=lazy(()=>import('src/pages/Initialisation/tva-view'));
+export const TvaView=lazy(()=>import('src/pages/Initialisation/tva-View'));
 
 
 export const ProductsPage = lazy(() => import('src/pages/products'));
