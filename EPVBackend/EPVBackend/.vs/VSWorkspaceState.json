@@ -7,6 +7,6 @@
     "\\Model",
     "\\Model\\Initialisation"
   ],
-  "SelectedNode": "\\Model\\Initialisation\\MoyenPaiement.cs",
+  "SelectedNode": "\\Controllers\\Initialisation\\ModeReglementController.cs",
   "PreviewInSolutionExplorer": false
 }

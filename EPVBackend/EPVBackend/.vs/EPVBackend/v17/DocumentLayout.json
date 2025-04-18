@@ -38,8 +38,7 @@
               "RelativeToolTip": "Controllers\\Initialisation\\MoyenPaiementController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAowB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T12:08:00.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T12:08:00.734Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Model\\Initialisation\\ModeReglement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T11:29:00.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T11:29:00.954Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T22:45:37.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T22:45:37.35Z"
             }
           ]
         }
