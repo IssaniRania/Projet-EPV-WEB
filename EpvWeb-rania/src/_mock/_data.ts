@@ -81,11 +81,11 @@ export const _langs = [
     label: 'français',
     icon: '/assets/icons/flags/ic-flag-fr.svg',
   },
- // {
- //   value: 'ar',
-  //  label: 'Arabic',
- //   icon: '/assets/icons/flags/ic-flag-ar.svg',
-//  },
+  {
+    value: 'ar',
+    label: 'Arabic',
+    icon: '/assets/icons/flags/ic-flag-ar.svg',
+  },
   {
     value: 'en',
     label: 'English',

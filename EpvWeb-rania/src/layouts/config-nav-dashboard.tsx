@@ -16,6 +16,11 @@ export const navData = [
 
   },
   {
+    title: 'Calendrier',
+    path: '/calendar',
+    icon: icon('ic-calendar'),
+  },
+  {
     title: 'Ventes',
     path: '/blog',
     icon: icon('ic-blog'),
