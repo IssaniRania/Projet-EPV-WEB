@@ -3,23 +3,21 @@ import { SvgColor } from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 
-const icon = (name: string, size = 24) => (
-  <SvgColor width={size}
-  height={size} src={`/assets/icons/navbar/${name}.svg`} />
+const icon = (name: string) => (
+  <SvgColor width="100%" height="100%" src={`/assets/icons/navbar/${name}.svg`} />
 );
 
+// Tableau de données de la navigation
 export const navData = [
   {
     title: 'Tableau de bord',
     path: '/',
     icon: icon('ic-analytics'),
-    
-
   },
   {
     title: 'Calendrier',
     path: '/calendar',
-    icon: icon('ic-calendar',24),
+    icon: icon('ic-calendar',),
   },
   {
     title: 'Ventes',
@@ -31,21 +29,10 @@ export const navData = [
     path: '/products',
     icon: icon('ic-cart'),
   },
- 
- /*   
- {
-    title: 'Produits',
-    path: '/products',
-    icon: icon('ic-cart'),
-    
-    
-  },  */  
-  
   {
     title: 'Produits',
     path: '/newproducts',
     icon: icon('ic-cart'),
-    
   },
   {
     title: 'Utilisateur',
@@ -55,22 +42,21 @@ export const navData = [
   {
     title: 'Stock',
     path: '/user',
-    icon: icon('ic-stock',21),
+    icon: icon('ic-stock',),
   },
   {
     title: 'Clients',
     path: '/blog',
-    icon: icon('ic-clients',21),
+    icon: icon('ic-clients',),
   },
   {
     title: 'Fournisseurs',
     path: '/blog',
-    icon: icon('ic-fourn',21),
+    icon: icon('ic-fourn',),
   },
   {
     title: 'Sign in',
     path: '/sign-in',
     icon: icon('ic-lock'),
   },
-
 ];
