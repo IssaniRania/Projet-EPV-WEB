@@ -12,6 +12,7 @@ namespace EPVBackend.Model
 
         public string Libelle { get; set; } = string.Empty;
 
+        public string Email { get; set; } = string.Empty;
         [Required] // MotdePasse est obligatoire
         public string MotdePasse { get; set; } = string.Empty;
 
