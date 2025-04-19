@@ -1,10 +1,13 @@
 import { Label } from 'src/components/label';
 import { SvgColor } from 'src/components/svg-color';
 
+
 // ----------------------------------------------------------------------
 
-const icon = (name: string) => (
-  <SvgColor width="100%" height="100%" src={`/assets/icons/navbar/${name}.svg`} />
+const icon = (name: string, size = 24) => (
+  <SvgColor width={size}
+  height={size} src={`/assets/icons/navbar/${name}.svg`} />
+
 );
 
 // Tableau de données de la navigation
@@ -17,7 +20,7 @@ export const navData = [
   {
     title: 'Calendrier',
     path: '/calendar',
-    icon: icon('ic-calendar',),
+    icon: icon('ic-calendar',24),
   },
   {
     title: 'Ventes',
@@ -42,17 +45,17 @@ export const navData = [
   {
     title: 'Stock',
     path: '/user',
-    icon: icon('ic-stock',),
+    icon: icon('ic-stock',20),
   },
   {
     title: 'Clients',
     path: '/blog',
-    icon: icon('ic-clients',),
+    icon: icon('ic-clients',20),
   },
   {
     title: 'Fournisseurs',
     path: '/blog',
-    icon: icon('ic-fourn',),
+    icon: icon('ic-fourn',20),
   },
   {
     title: 'Sign in',
