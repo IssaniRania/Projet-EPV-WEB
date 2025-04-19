@@ -1,19 +1,17 @@
 import { Label } from 'src/components/label';
 import { SvgColor } from 'src/components/svg-color';
 
-// ----------------------------------------------------------------------
-
+// Fonction pour générer l'icône SVG
 const icon = (name: string) => (
   <SvgColor width="100%" height="100%" src={`/assets/icons/navbar/${name}.svg`} />
 );
 
+// Tableau de données de la navigation
 export const navData = [
   {
     title: 'Tableau de bord',
     path: '/',
     icon: icon('ic-analytics'),
-    
-
   },
   {
     title: 'Calendrier',
@@ -30,21 +28,10 @@ export const navData = [
     path: '/products',
     icon: icon('ic-cart'),
   },
- 
- /*   
- {
-    title: 'Produits',
-    path: '/products',
-    icon: icon('ic-cart'),
-    
-    
-  },  */  
-  
   {
     title: 'Produits',
     path: '/newproducts',
     icon: icon('ic-cart'),
-    
   },
   {
     title: 'Utilisateurs',
@@ -56,5 +43,4 @@ export const navData = [
     path: '/sign-in',
     icon: icon('ic-lock'),
   },
-
 ];

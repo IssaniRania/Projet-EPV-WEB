@@ -17,6 +17,8 @@ import { layoutClasses } from '../classes';
 
 export type HeaderSectionProps = AppBarProps & {
   layoutQuery: Breakpoint;
+  drawerWidth?: number;
+  isSidebarOpen?: boolean;
   slots?: {
     leftArea?: React.ReactNode;
     rightArea?: React.ReactNode;
@@ -35,6 +37,8 @@ export function HeaderSection({
   slots,
   slotProps,
   layoutQuery = 'md',
+  drawerWidth,
+  isSidebarOpen = true,
   ...other
 }: HeaderSectionProps) {
   const theme = useTheme();
@@ -65,10 +69,17 @@ export function HeaderSection({
       sx={{
         boxShadow: 'none',
         zIndex: 'var(--layout-header-zIndex)',
+        background: '#FFF',
+        width:1650,
+        marginLeft: isSidebarOpen ? `${drawerWidth}px` : -30,
+        transition: theme.transitions.create(['width', 'margin'], {
+          duration: theme.transitions.duration.shorter,
+        }),
         ...sx,
       }}
       {...other}
     >
+
       {slots?.topArea}
 
       <Toolbar

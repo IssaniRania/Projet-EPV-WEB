@@ -63,7 +63,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
   const theme = useTheme();
 
   const [navOpen, setNavOpen] = useState(false);
-
+  const [open, setOpen] = useState(true);
   const layoutQuery: Breakpoint = 'lg';
   
 
@@ -73,8 +73,10 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
        * Header
        *************************************** */
       headerSection={
-        <HeaderSection
+        <HeaderSection 
           layoutQuery={layoutQuery}
+          drawerWidth={open ? -64 : 0}
+          isSidebarOpen={open}
           slotProps={{
             container: {
               maxWidth: false,
@@ -82,6 +84,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
             },
           }}
           sx={header?.sx}
+          
           slots={{
             topArea: (
               <Alert severity="info" sx={{ display: 'none', borderRadius: 0 }}>
@@ -101,7 +104,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
                   data={navData}
                   open={navOpen}
                   onClose={() => setNavOpen(false)}
-                  workspaces={_workspaces}
+                 
                 />
                 <DropdownButtons />
                 
@@ -141,7 +144,9 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
        * Sidebar
        *************************************** */
       sidebarSection={
-        <NavDesktop data={navData} layoutQuery={layoutQuery} workspaces={_workspaces} />
+        <NavDesktop data={navData} layoutQuery={layoutQuery}
+        isOpen={open}
+        onToggle={() => setOpen(!open)} />
       }
       /** **************************************
        * Footer
