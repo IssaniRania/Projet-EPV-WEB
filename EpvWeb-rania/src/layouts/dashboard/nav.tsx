@@ -69,6 +69,7 @@ export function NavDesktop({
   return (
     <Box
       sx={{
+        boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         pt: 2.5,
         px: 1,
         top: 0,

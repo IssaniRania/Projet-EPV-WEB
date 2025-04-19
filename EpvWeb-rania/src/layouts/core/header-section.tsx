@@ -67,7 +67,7 @@ export function HeaderSection({
       color="transparent"
       className={layoutClasses.header}
       sx={{
-        boxShadow: 'none',
+        boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         zIndex: 'var(--layout-header-zIndex)',
         background: '#FFF',
         width:isSidebarOpen ?1500:1650,
