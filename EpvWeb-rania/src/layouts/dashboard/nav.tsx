@@ -52,7 +52,8 @@ export function NavDesktop({
   slots,
   layoutQuery,
   isOpen = true,  // Valeur par défaut pour isOpen
-  onToggle,      // Fonction pour basculer l'état
+  onToggle,     
+  collapsed,
 }: NavContentProps & { layoutQuery: Breakpoint }) {
   const theme = useTheme();
   const [open, setOpen] = useState(isOpen); // Utilisation de isOpen pour initialiser l'état
@@ -87,11 +88,16 @@ export function NavDesktop({
         ...sx,
       }}
     >
-      <Toolbar sx={{ justifyContent: open ? 'flex-end' : 'center' }}>
-        <IconButton sx={{ marginTop: -5 }} onClick={handleToggle}>
-          {open ? <ChevronLeftIcon /> : <MenuIcon />}
-        </IconButton>
-      </Toolbar>
+      <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center', px: 1 }}>
+      {!collapsed && open && (
+        <Logo style={{ marginBottom: 20, marginTop: -7 }} />
+      )}
+
+      <IconButton sx={{ marginTop: -5 ,marginLeft:-2.5 }} onClick={handleToggle}>
+        {open ? <ChevronLeftIcon /> : <MenuIcon />}
+      </IconButton>
+    </Toolbar>
+
 
       <Box sx={{ flex: 1, overflowY: 'auto' }}>
         <NavContent data={data} slots={slots} />
@@ -153,7 +159,7 @@ export function NavContent({ data, slots,  collapsed, sx }: NavContentProps) {
   return (
     <>
     <div >
-      <Logo style={{marginBottom:20 ,marginTop:-7}}/>
+      
       {slots?.topArea}
       <Scrollbar fillContent>
         <Box component="nav" display="flex" flex="1 1 auto" flexDirection="column" sx={sx}>

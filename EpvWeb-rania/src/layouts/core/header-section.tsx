@@ -70,7 +70,7 @@ export function HeaderSection({
         boxShadow: 'none',
         zIndex: 'var(--layout-header-zIndex)',
         background: '#FFF',
-        width:1650,
+        width:isSidebarOpen ?1500:1650,
         marginLeft: isSidebarOpen ? `${drawerWidth}px` : -30,
         transition: theme.transitions.create(['width', 'margin'], {
           duration: theme.transitions.duration.shorter,
