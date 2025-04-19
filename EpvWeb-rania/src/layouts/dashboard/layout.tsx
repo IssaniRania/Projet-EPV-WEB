@@ -65,7 +65,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
   const [navOpen, setNavOpen] = useState(false);
   const [open, setOpen] = useState(true);
   const layoutQuery: Breakpoint = 'lg';
-  
+ 
 
   return (
     <LayoutSection
@@ -170,7 +170,8 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
         ...sx,
       }}
     >
-      <Main>{children}</Main>
+      <Main isSidebarOpen={open}>{children}</Main>
+
     </LayoutSection>
   );
 }
