@@ -89,14 +89,19 @@ export function NavDesktop({
         ...sx,
       }}
     >
-      <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center', px: 1 }}>
-      {!collapsed && open && (
-        <Logo style={{ marginBottom: 20, marginTop: -7 }} />
-      )}
+      <Toolbar sx={{ display: 'flex',justifyContent: 'space-between', alignItems: 'center', px: 1 }}>
+      
 
-      <IconButton sx={{ marginTop: -5 ,marginLeft:-2.5 }} onClick={handleToggle}>
+      <IconButton sx={{ marginBottom: 11 ,marginLeft:-2.5 }} onClick={handleToggle}>
         {open ? <ChevronLeftIcon /> : <MenuIcon />}
       </IconButton>
+
+      {/* Logo */}
+      {!collapsed && open && (
+    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+      <Logo sx={{ width: '100px', height: '100px', }} />  {/* Increase logo size */}
+    </Box>
+  )}
     </Toolbar>
 
 

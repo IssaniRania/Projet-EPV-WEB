@@ -22,7 +22,7 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
     { width, href = '/', height, isSingle = true, disableLink = false, className, sx, ...other },
     ref
   ) => {
-    const theme = useTheme();
+   /* const theme = useTheme();
 
     const gradientId = useId();
 
@@ -38,7 +38,7 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
       <Box
         alt="Single logo"
         component="img"
-        src="/assets/icons/logo/epv-logo.png"
+        src="/assets/icons/logo/epv.png"
         width="100%"
         height="70%"
       />
