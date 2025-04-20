@@ -171,3 +171,8 @@ D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.genruntimeconfig.cache
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\ref\EPVBackend.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\MailKit.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\MimeKit.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

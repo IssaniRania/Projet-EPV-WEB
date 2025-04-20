@@ -4,6 +4,8 @@ using EPVBackend.Model;
 using EPVBackend.DTOs;
 using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
+using EPVBackend.Service;
+
 namespace EPVBackend.Controllers
 {
     [Route("api/auth")]
@@ -11,9 +13,11 @@ namespace EPVBackend.Controllers
     public class ControllerAuth : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public ControllerAuth(ApplicationDbContext context)
+        private readonly IEmailService _emailService;
+        public ControllerAuth(ApplicationDbContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
@@ -36,21 +40,23 @@ namespace EPVBackend.Controllers
             });
         }
 
-        [HttpPost("reset-password")]
-        public IActionResult ResetPassword([FromBody] ResetPasswordRequest request)
-        {
-            var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Code == request.Code);
+        //[HttpPost("reset-password")]
+        //public IActionResult ResetPassword([FromBody] ResetPasswordRequest request)
+        //{
+        //    var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Code == request.Code);
 
-            if (utilisateur == null)
-            {
-                return NotFound(new { message = "Utilisateur introuvable." });
-            }
+        //    if (utilisateur == null)
+        //    {
+        //        return NotFound(new { message = "Utilisateur introuvable." });
+        //    }
 
-            utilisateur.MotdePasse = request.NewPassword;
-            _context.SaveChanges();
+        //    utilisateur.MotdePasse = request.NewPassword;
+        //    _context.SaveChanges();
 
-            return Ok(new { message = "Mot de passe mis à jour avec succès." });
-        }
+        //    return Ok(new { message = "Mot de passe mis à jour avec succès." });
+        //}
+
+
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Utilisateur user)
@@ -73,7 +79,76 @@ namespace EPVBackend.Controllers
 
             return Ok(new { message = "Utilisateur créé avec succès" });
         }
+        [HttpPost("configure")]
+        public IActionResult ConfigureEmailSettings([FromBody] EmailSettings emailSettings)
+        {
+            // Configure le service d'email avec les paramètres reçus
+            _emailService.ConfigureEmailSettings(emailSettings);
+            return Ok("Email settings configured successfully.");
+        }
 
+        [HttpPost("send-reset-code")]
+        public async Task<IActionResult> SendResetCode([FromBody] ResetPasswordRequest request)
+
+        {
+            var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Email == request.Email);
+            if (utilisateur == null)
+            {
+                return NotFound(new { message = "Utilisateur non trouvé." });
+            }
+
+            // Générer un code aléatoire
+            var resetCode = Guid.NewGuid().ToString().Substring(0, 6); // Code aléatoire
+
+            // Sauvegarder le code dans la base de données ou en mémoire pour vérification
+            utilisateur.ResetToken = resetCode;
+            utilisateur.ResetTokenExpiry = DateTime.Now.AddMinutes(10); // Code valable 10 minutes
+            _context.SaveChanges();
+
+            // Envoi du code de réinitialisation par email
+            var message = $"Voici votre code de réinitialisation : {resetCode}";
+            try
+            {
+                Console.WriteLine("Email envoyé à : " + request.Email);
+                await _emailService.SendEmailAsync(request.Email!, "Réinitialisation de mot de passe", message);
+                Console.WriteLine("email envoyé.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERREUR INTERNE : " + ex.ToString());
+                return StatusCode(500, new { message = "Erreur lors de l'envoi de l'email", erreur = ex.Message });
+            }
+
+
+            return Ok(new { message = "Un code de réinitialisation a été envoyé à votre email." });
+        }
+
+        [HttpPost("verify-reset-code")]
+        public IActionResult VerifyResetCode([FromBody] VerifyResetCodeRequest request)
+        {
+            var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Email == request.Email);
+            if (utilisateur == null || utilisateur.ResetToken != request.Code || utilisateur.ResetTokenExpiry < DateTime.Now)
+            {
+                return BadRequest(new { message = "Code de réinitialisation invalide ou expiré." });
+            }
+
+            return Ok(new { message = "Code vérifié avec succès." });
+        }
+
+        [HttpPost("reset-password")]
+        public IActionResult ResetPassword([FromBody] ResetPasswordRequest request)
+        {
+            var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Email == request.Email);
+            if (utilisateur == null)
+            {
+                return NotFound(new { message = "Utilisateur introuvable." });
+            }
+
+            utilisateur.MotdePasse = request.NewPassword; // Hasher le mot de passe avant de le sauvegarder
+            _context.SaveChanges();
+
+            return Ok(new { message = "Mot de passe mis à jour avec succès." });
+        }
 
 
 

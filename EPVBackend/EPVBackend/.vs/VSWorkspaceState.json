@@ -3,9 +3,9 @@
     "",
     "\\Controllers",
     "\\Controllers\\Initialisation",
-    "\\Data",
-    "\\Model",
-    "\\Model\\Initialisation"
+    "\\DTOs",
+    "\\Interface",
+    "\\Service"
   ],
   "SelectedNode": "\\Controllers\\ControllerAuth.cs",
   "PreviewInSolutionExplorer": false

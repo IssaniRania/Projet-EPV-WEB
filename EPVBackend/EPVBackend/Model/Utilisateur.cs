@@ -13,6 +13,7 @@ namespace EPVBackend.Model
         public string Libelle { get; set; } = string.Empty;
 
         public string Email { get; set; } = string.Empty;
+
         [Required] // MotdePasse est obligatoire
         public string MotdePasse { get; set; } = string.Empty;
 
@@ -26,5 +27,8 @@ namespace EPVBackend.Model
         public string CodeProfil { get; set; } = string.Empty;
 
         public string NomProfil { get; set; } = string.Empty;
+        public string? ResetToken { get; set; } = string.Empty; // Token envoyé par e-mail
+        public DateTime? ResetTokenExpiry { get; set; } // Date d'expiration du token
+
     }
 }

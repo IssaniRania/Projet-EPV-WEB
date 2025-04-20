@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using EPVBackend.Data;
 using EPVBackend;
+using EPVBackend.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,17 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Ajouter DbContext à l'injection de dépendance
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+// Enregistrer EmailSettings
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
+// Enregistrer IEmailService et EmailService
+builder.Services.AddSingleton<IEmailService, EmailService>();
+
+// Configure EmailSettings from appsettings.json
+//builder.services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
+// Register EmailService
+builder.Services.AddTransient<IEmailService, EmailService>();
 // Ajouter des services nécessaires pour Swagger
 builder.Services.AddSwaggerGen(); // Active Swagger
 
