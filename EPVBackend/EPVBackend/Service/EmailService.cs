@@ -36,80 +36,26 @@ namespace EPVBackend.Service
             if (string.IsNullOrWhiteSpace(toEmail))
                 throw new ArgumentNullException(nameof(toEmail));
 
-            try
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress(_emailSettings.SenderName, _emailSettings.SenderEmail));
+            message.To.Add(new MailboxAddress("", toEmail));
+            message.Subject = subject;
+
+
+            var builder = new BodyBuilder
             {
-                var message = new MimeMessage();
+                HtmlBody = body,
+                TextBody = "Voici le contenu de l'e-mail en texte brut (au cas où le HTML est bloqué)."
+            };
 
-                // Configuration de l'expéditeur
-                message.From.Add(new MailboxAddress(
-                    _emailSettings.SenderName,
-                    _emailSettings.SenderEmail));
+            message.Body = builder.ToMessageBody();
 
-                // Configuration du destinataire avec formatage optimal
-                message.To.Add(new MailboxAddress("", toEmail));
-
-                // Encodage du sujet pour les caractères spéciaux
-                message.Subject = subject;
-
-                // Ajout d'en-têtes anti-spam
-                message.Headers.Add("Precedence", "bulk");
-                message.Headers.Add("X-Priority", "3"); // Priorité normale
-                message.Headers.Add("List-Unsubscribe", $"<mailto:unsubscribe@{_emailSettings.SenderEmail.Split('@')[1]}>");
-
-                var builder = new BodyBuilder
-                {
-                    HtmlBody = body,
-                    // Version texte alternative obligatoire
-                    TextBody = StripHtml(body) ?? "Merci de lire cet email dans un client supportant le HTML."
-                };
-
-                message.Body = builder.ToMessageBody();
-
-                using var client = new SmtpClient();
-
-                // Configuration avancée de la connexion
-                client.Timeout = 30000; // 30 secondes
-                client.ServerCertificateValidationCallback = (s, c, h, e) => true;
-
-                await client.ConnectAsync(
-                    _emailSettings.SmtpServer,
-                    _emailSettings.SmtpPort,
-                    SecureSocketOptions.StartTls);
-
-                await client.AuthenticateAsync(
-                    _emailSettings.SenderEmail,
-                    _emailSettings.SenderPassword);
-
-                await client.SendAsync(message);
-                await client.DisconnectAsync(true);
-
-                Console.WriteLine($"Email envoyé à {toEmail}");
-            }
-            catch (SmtpCommandException ex)
-            {
-                Console.WriteLine($"Erreur SMTP (Status: {ex.StatusCode}) : {ex.Message}");
-                throw;
-            }
-            catch (AuthenticationException ex)
-            {
-                Console.WriteLine("Échec d'authentification. Vérifiez :");
-                Console.WriteLine($"1. Mot de passe d'application valide : {!_emailSettings.SenderPassword.Contains("@")}");
-                Console.WriteLine($"2. Validation 2FA activée : https://myaccount.google.com/security");
-                throw;
-            }
-        }
-
-        private static string StripHtml(string html)
-        {
-            try
-            {
-                var doc = new HtmlAgilityPack.HtmlDocument();
-                doc.LoadHtml(html);
-                return doc.DocumentNode.InnerText;
-            }
-            catch
-            {
-                return null;
-            }
+            using var client = new SmtpClient();
+            await client.ConnectAsync(_emailSettings.SmtpServer, _emailSettings.SmtpPort, SecureSocketOptions.StartTls);
+            await client.AuthenticateAsync(_emailSettings.SenderEmail, _emailSettings.SenderPassword);
+            await client.SendAsync(message);
+            await client.DisconnectAsync(true);
         }
     }
+
+}

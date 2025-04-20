@@ -5,8 +5,9 @@
     "\\Controllers\\Initialisation",
     "\\DTOs",
     "\\Interface",
+    "\\Properties",
     "\\Service"
   ],
-  "SelectedNode": "\\Controllers\\ControllerAuth.cs",
+  "SelectedNode": "\\Service\\EmailService.cs",
   "PreviewInSolutionExplorer": false
 }
