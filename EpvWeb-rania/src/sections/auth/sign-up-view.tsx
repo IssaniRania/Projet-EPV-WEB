@@ -22,6 +22,7 @@ export function SignUpView() {
   const [formData, setFormData] = useState({
     Code: '',
     Libelle: '',
+    Email:'',
     MotdePasse: '',
     repeatPassword: '',
   });
@@ -43,9 +44,9 @@ export function SignUpView() {
     setError('');
     setSuccess('');
   
-    const { Code, Libelle, MotdePasse, repeatPassword } = formData;
+    const { Code, Libelle, Email, MotdePasse, repeatPassword } = formData;
   
-    if (!Code || !Libelle || !MotdePasse) {
+    if (!Code || !Libelle || !MotdePasse ) {
       setError('Tous les champs sont obligatoires.');
       setLoading(false);
       return;
@@ -61,10 +62,11 @@ export function SignUpView() {
       await axios.post('http://localhost:5088/api/auth/register', {
         Code,
         Libelle,
+        Email,
         MotdePasse,
       });
       setSuccess('Compte créé avec succès.');
-      setFormData({ Code: '', Libelle: '', MotdePasse: '', repeatPassword: '' });
+      setFormData({ Code: '', Libelle: '',Email: '', MotdePasse: '', repeatPassword: '' });
   
       setTimeout(() => {
         router.push('/sign-in');
@@ -117,7 +119,16 @@ export function SignUpView() {
           InputLabelProps={{ shrink: true }}
           sx={{ mb: 3 }}
         />
-
+      <TextField
+          fullWidth
+          name="Email"
+          label="Email"
+          type='Email'
+          value={formData.Email}
+          onChange={handleChange}
+          InputLabelProps={{ shrink: true }}
+          sx={{ mb: 3 }}
+        />
         <TextField
           fullWidth
           name="MotdePasse"
