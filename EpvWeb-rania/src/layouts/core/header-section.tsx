@@ -8,9 +8,9 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { bgBlur, varAlpha } from 'src/theme/styles';
-
 import { layoutClasses } from '../classes';
 
 // ----------------------------------------------------------------------
@@ -37,11 +37,23 @@ export function HeaderSection({
   slots,
   slotProps,
   layoutQuery = 'md',
-  drawerWidth,
+  drawerWidth = 280,
   isSidebarOpen = true,
   ...other
 }: HeaderSectionProps) {
   const theme = useTheme();
+
+  // Detect screen size
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up(layoutQuery));
+
+  // Responsive width & margin
+  const width = isLargeScreen && isSidebarOpen
+    ? `calc(100% - ${drawerWidth}px)`
+    : '100%';
+
+  const marginLeft = isLargeScreen && isSidebarOpen
+    ? `${drawerWidth}px`
+    : 0;
 
   const toolbarStyles = {
     default: {
@@ -69,9 +81,9 @@ export function HeaderSection({
       sx={{
         boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         zIndex: 'var(--layout-header-zIndex)',
-        background: '#FFF',
-        width:isSidebarOpen ?1500:1650,
-        marginLeft: isSidebarOpen ? `${drawerWidth}px` : -30,
+        background: '#fff',
+        width,
+        marginLeft,
         transition: theme.transitions.create(['width', 'margin'], {
           duration: theme.transitions.duration.shorter,
         }),
@@ -79,7 +91,6 @@ export function HeaderSection({
       }}
       {...other}
     >
-
       {slots?.topArea}
 
       <Toolbar
