@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import type { BoxProps } from '@mui/material/Box';
 import type { Breakpoint } from '@mui/material/styles';
 import type { ContainerProps } from '@mui/material/Container';
@@ -9,13 +10,17 @@ import Container from '@mui/material/Container';
 import { layoutClasses } from 'src/layouts/classes';
 
 // ----------------------------------------------------------------------
-
-export function Main({ children, sx, ...other }: BoxProps) {
+type MainProps = BoxProps & {
+  isSidebarOpen?: boolean;
+}
+export function Main({ children,isSidebarOpen = false, sx, ...other }:MainProps) {
+  const drawerWidth = 240;
   return (
     <Box
       component="main"
       className={layoutClasses.main}
       sx={{
+        marginLeft: isSidebarOpen ? 0: -30,
         display: 'flex',
         flex: '1 1 auto',
         flexDirection: 'column',
@@ -42,36 +47,28 @@ export function DashboardContent({
   ...other
 }: DashboardContentProps) {
   const theme = useTheme();
-
+  const drawerWidth = 240;
+  const collapsedWidth = 64;
   const layoutQuery: Breakpoint = 'lg';
-
+  const [open, setOpen] = useState(false);
   return (
     <Container
-      className={layoutClasses.content}
-      maxWidth={maxWidth || false}
-      sx={{
-        display: 'flex',
-        flex: '1 1 auto',
-        flexDirection: 'column',
-        pt: 'var(--layout-dashboard-content-pt)',
-        pb: 'var(--layout-dashboard-content-pb)',
-        [theme.breakpoints.up(layoutQuery)]: {
-          px: 'var(--layout-dashboard-content-px)',
-        },
-        ...(disablePadding && {
-          p: {
-            xs: 0,
-            sm: 0,
-            md: 0,
-            lg: 0,
-            xl: 0,
-          },
-        }),
-        ...sx,
-      }}
-      {...other}
-    >
-      {children}
+    
+    component="main"
+    className={layoutClasses.main}
+    sx={{
+      display: 'flex',
+      flex: '1 1 auto',
+      flexDirection: 'column',
+      transition: 'margin 0.3s, width 0.3s',
+      marginLeft: open ? `${drawerWidth}px` : `${collapsedWidth}px`,
+      width: open ? `calc(100% - ${drawerWidth}px)` : `calc(100% - ${collapsedWidth}px)`,
+      ...sx,
+    }}
+    {...other}
+  >
+    {children}
+  
     </Container>
   );
 }

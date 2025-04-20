@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\ModeReglementController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\Initialisation\\ModeReglementController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,36 +38,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MoyenPaiementController.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\MoyenPaiementController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Initialisation\\MoyenPaiementController.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\MoyenPaiementController.cs",
-              "RelativeToolTip": "Controllers\\Initialisation\\MoyenPaiementController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T12:08:00.734Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ModeReglementController.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\ModeReglementController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Initialisation\\ModeReglementController.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\ModeReglementController.cs",
-              "RelativeToolTip": "Controllers\\Initialisation\\ModeReglementController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowBcAAAA3AAAAAAAAAA==",
+              "Title": "ControllerAuth.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
+              "RelativeDocumentMoniker": "Controllers\\ControllerAuth.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
+              "RelativeToolTip": "Controllers\\ControllerAuth.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T12:04:46.835Z",
+              "WhenOpened": "2025-04-19T22:31:12.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "Model\\Utilisateur.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs",
+              "RelativeToolTip": "Model\\Utilisateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T13:08:28.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeDocumentMoniker": "Model\\Produit.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeToolTip": "Model\\Produit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T13:08:23.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ModeReglementController.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\ModeReglementController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Initialisation\\ModeReglementController.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\ModeReglementController.cs",
+              "RelativeToolTip": "Controllers\\Initialisation\\ModeReglementController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T13:08:07.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MoyenPaiementController.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\MoyenPaiementController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Initialisation\\MoyenPaiementController.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\Initialisation\\MoyenPaiementController.cs",
+              "RelativeToolTip": "Controllers\\Initialisation\\MoyenPaiementController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:08:00.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ModeReglement.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Initialisation\\ModeReglement.cs",
               "RelativeDocumentMoniker": "Model\\Initialisation\\ModeReglement.cs",
@@ -67,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",

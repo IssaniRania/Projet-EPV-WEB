@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7058ac514d2c08e3029d3ecbba9e120ad5ade5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfecb7c55a94c5cca62f557dd3c2b65a32894100")]
 [assembly: System.Reflection.AssemblyProductAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
