@@ -176,3 +176,4 @@ D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.genruntimeconfig.cache
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\ref\EPVBackend.dll
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

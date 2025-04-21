@@ -4,10 +4,8 @@
     "\\Controllers",
     "\\Controllers\\Initialisation",
     "\\DTOs",
-    "\\Interface",
-    "\\Properties",
-    "\\Service"
+    "\\Model"
   ],
-  "SelectedNode": "\\Service\\EmailService.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

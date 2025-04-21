@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+881d3089e620707c9ffc7d70068c43e8f122b226")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7501133690535c47776ea31c90818a8ee2a3c4c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EPVBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

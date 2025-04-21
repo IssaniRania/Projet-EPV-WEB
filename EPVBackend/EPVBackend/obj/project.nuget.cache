@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yTMHns8r248=",
+  "dgSpecHash": "Nt/aryxTMY4=",
   "success": true,
   "projectFilePath": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\EPVBackend.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Rania\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\Rania\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Rania\\.nuget\\packages\\mailkit\\4.11.0\\mailkit.4.11.0.nupkg.sha512",
+    "C:\\Users\\Rania\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\Rania\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.3.0\\microsoft.aspnetcore.cors.2.3.0.nupkg.sha512",
     "C:\\Users\\Rania\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\Rania\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.3.0\\microsoft.aspnetcore.http.extensions.2.3.0.nupkg.sha512",

@@ -3,48 +3,36 @@
   "WorkspaceRootPath": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Service\\EmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ControllerAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\IEmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Service\\IEmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\SendResetCodeRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\SendResetCodeRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\ResetPasswordRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\ResetPasswordRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\VerifyResetCodeRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\VerifyResetCodeRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Service\\EmailSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\LoginResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjetEPV\\EPVBackend\\EPVBackend\\EPVBackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EPVBackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,141 +42,111 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-20T22:02:58.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-20T12:13:39.552Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SendResetCodeRequest.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\SendResetCodeRequest.cs",
-              "RelativeDocumentMoniker": "DTOs\\SendResetCodeRequest.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\SendResetCodeRequest.cs",
-              "RelativeToolTip": "DTOs\\SendResetCodeRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:04:55.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ResetPasswordRequest.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\ResetPasswordRequest.cs",
-              "RelativeDocumentMoniker": "DTOs\\ResetPasswordRequest.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\ResetPasswordRequest.cs",
-              "RelativeToolTip": "DTOs\\ResetPasswordRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:04:50.543Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "VerifyResetCodeRequest.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\VerifyResetCodeRequest.cs",
-              "RelativeDocumentMoniker": "DTOs\\VerifyResetCodeRequest.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\VerifyResetCodeRequest.cs",
-              "RelativeToolTip": "DTOs\\VerifyResetCodeRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:04:24.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailService.cs",
-              "RelativeDocumentMoniker": "Service\\EmailService.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailService.cs",
-              "RelativeToolTip": "Service\\EmailService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:57:01.476Z",
+              "WhenOpened": "2025-04-21T19:40:18.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ControllerAuth.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
-              "RelativeDocumentMoniker": "Controllers\\ControllerAuth.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
-              "RelativeToolTip": "Controllers\\ControllerAuth.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAFcAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeDocumentMoniker": "Model\\Produit.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Produit.cs",
+              "RelativeToolTip": "Model\\Produit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:53:32.126Z"
+              "WhenOpened": "2025-04-21T19:31:11.594Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IEmailService.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\IEmailService.cs",
-              "RelativeDocumentMoniker": "Service\\IEmailService.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\IEmailService.cs",
-              "RelativeToolTip": "Service\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:01:24.951Z"
+              "DocumentIndex": 7,
+              "Title": "EPVBackend.csproj",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\EPVBackend.csproj",
+              "RelativeDocumentMoniker": "EPVBackend.csproj",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\EPVBackend.csproj",
+              "RelativeToolTip": "EPVBackend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-21T19:23:51.768Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EmailSettings.cs",
-              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailSettings.cs",
-              "RelativeDocumentMoniker": "Service\\EmailSettings.cs",
-              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Service\\EmailSettings.cs",
-              "RelativeToolTip": "Service\\EmailSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:58:13.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAIwEMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:02:36.004Z"
+              "WhenOpened": "2025-04-21T19:13:53.843Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginRequest.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginRequest.cs",
+              "RelativeToolTip": "DTOs\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T19:12:04.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginResponse.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\DTOs\\LoginResponse.cs",
+              "RelativeToolTip": "DTOs\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T19:11:53.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControllerAuth.cs",
+              "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
+              "RelativeDocumentMoniker": "Controllers\\ControllerAuth.cs",
+              "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Controllers\\ControllerAuth.cs",
+              "RelativeToolTip": "Controllers\\ControllerAuth.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T19:10:50.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Utilisateur.cs",
               "DocumentMoniker": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs",
               "RelativeDocumentMoniker": "Model\\Utilisateur.cs",
               "ToolTip": "D:\\ProjetEPV\\EPVBackend\\EPVBackend\\Model\\Utilisateur.cs",
               "RelativeToolTip": "Model\\Utilisateur.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwAwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:01:07.291Z"
+              "WhenOpened": "2025-04-21T19:09:17.99Z",
+              "EditorCaption": ""
             }
           ]
         }

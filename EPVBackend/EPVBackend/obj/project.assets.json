@@ -103,6 +103,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cors/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -2040,6 +2059,21 @@
         "lib/netstandard2.1/MailKit.xml",
         "mailkit.4.11.0.nupkg.sha512",
         "mailkit.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.0": {
+      "sha512": "eIhpX25uUn33Ornnh718V2G/nESvk3TNX2FjTarv634GLfE50Fhz2geJ/QYpSmFaUIQ1hkZPfd9i0LcpZ9bfLQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cors/2.3.0": {
@@ -5587,11 +5621,14 @@
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "MailKit >= 4.11.0",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.AspNetCore.Cors >= 2.3.0",
       "Microsoft.EntityFrameworkCore >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.3",
-      "Swashbuckle.AspNetCore >= 8.0.0"
+      "Microsoft.IdentityModel.Tokens >= 6.35.0",
+      "Swashbuckle.AspNetCore >= 8.0.0",
+      "System.IdentityModel.Tokens.Jwt >= 6.35.0"
     ]
   },
   "packageFolders": {
@@ -5656,6 +5693,10 @@
             "target": "Package",
             "version": "[4.11.0, )"
           },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Microsoft.AspNetCore.Cors": {
             "target": "Package",
             "version": "[2.3.0, )"
@@ -5674,9 +5715,17 @@
             "target": "Package",
             "version": "[9.0.3, )"
           },
+          "Microsoft.IdentityModel.Tokens": {
+            "target": "Package",
+            "version": "[6.35.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[6.35.0, )"
           }
         },
         "imports": [
