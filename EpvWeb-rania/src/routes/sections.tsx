@@ -45,6 +45,10 @@ const renderFallback = (
 export function Router() {
   return useRoutes([
     {
+      path: '/',
+      element: <Navigate to="/sign-in" replace />,
+    },
+    {
       element: (
         <DashboardLayout>
           <Suspense fallback={renderFallback}>
@@ -53,7 +57,7 @@ export function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <HomePage />, index: true },
+        {path: 'home', element: <HomePage />, index: true },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'newproducts', element: <NewProductPage />},
