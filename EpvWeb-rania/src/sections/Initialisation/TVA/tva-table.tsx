@@ -10,11 +10,11 @@ import Paper from '@mui/material/Paper';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#A1A5B7',
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 16,
   },
 }));
 
@@ -29,46 +29,41 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  code: number,
+  taux: number,
+  majoration: number,
+ 
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { code, taux, majoration };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData(0, 0, 0 ),
+  createData(0, 0, 0),
+  createData(0, 0, 0),
+  createData(0, 0, 0),
+  createData(0, 0, 0,),
 ];
 
-function tvaTable() {
+export default function TvaTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <Table sx={{ minWidth: 500, marginTop:4 }} aria-label="TVA table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell align="center">Code</StyledTableCell>
+            <StyledTableCell align="center">Taux TVA</StyledTableCell>
+            <StyledTableCell align="center">Majoration TVA</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
+            <StyledTableRow key={row.code}>
+              <StyledTableCell   align="center">
+                {row.code}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="center">{row.taux}</StyledTableCell>
+              <StyledTableCell align="center">{row.majoration}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -76,4 +71,3 @@ function tvaTable() {
     </TableContainer>
   );
 }
-export default tvaTable;

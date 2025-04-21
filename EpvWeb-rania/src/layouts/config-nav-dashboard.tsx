@@ -16,7 +16,18 @@ export const navData = [
     title: 'Tableau de bord',
     path: '/',
     icon: icon('ic-analytics'),
+    children: [
+      {
+        title: 'Ventes',
+        path: '/rapports/ventes',
+      },
+      {
+        title: 'Clients',
+        path: '/rapports/clients',
+      },
+    ],
   },
+  
   {
     title: 'Calendrier',
     path: '/calendar',

@@ -30,7 +30,8 @@ export type NavContentProps = {
     path: string;
     title: string;
     icon: React.ReactNode;
-    info?: React.ReactNode;
+    
+   
   }[];
   slots?: {
     topArea?: React.ReactNode;
@@ -93,7 +94,7 @@ export function NavDesktop({
       
 
       <IconButton sx={{ marginBottom: 11 ,marginLeft:-2.5 }} onClick={handleToggle}>
-        {open ? <ChevronLeftIcon /> : <MenuIcon />}
+        {open ? <MenuIcon /> : <MenuIcon />}
       </IconButton>
 
       {/* Logo */}
@@ -229,7 +230,7 @@ export function NavContent({ data, slots,  collapsed, sx }: NavContentProps) {
                     </Box>
 
 
-                    {item.info && item.info}
+                   
                   </ListItemButton>
                 </ListItem>
               );
