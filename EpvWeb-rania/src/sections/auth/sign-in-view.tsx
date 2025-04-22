@@ -39,26 +39,40 @@ export function SignInView() {
     setError('');
     setSuccess('');
     try {
+      if (!code || !password) {
+        setError('Le code et le mot de passe sont requis.');
+        return;
+      }
+
       const response = await fetch('http://localhost:5088/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ Code:code, motdePasse: password }),
+        body: JSON.stringify({ Code: code, motdePasse: password }),
       });
-      if (response.ok) {
-        setSuccess("Connexion réussie" );
-        router.push('/'); 
-      } else if (response.status === 401) {
-        setError("Votre code ou mot de passe est incorrect.");
 
+      if (response.ok) {
+        const responseData = await response.json();
+      const token = responseData.token;
+      const Libelle = responseData.libelle;
+      const email = responseData.email;
+      console.log('Token:', token);
+      console.log('data:', responseData);
+      console.log('Libelle:', Libelle);
+      sessionStorage.setItem('authToken', token);
+      sessionStorage.setItem('authLibelle', Libelle);
+      sessionStorage.setItem('authEmail', email);
+      setSuccess('Connexion réussie');
+        router.push('/home');
+      } else if (response.status === 401) {
+        setError('Votre code ou mot de passe est incorrect.');
       } else {
-        setError("Une erreur s'est produite.");
+        const errorData = await response.json();
+        setError(errorData?.message || "Une erreur s'est produite.");
       }
-      // console.log('Connexion réussie :', response.data);
-      // router.push('/'); // rediriger vers page d'accueil
     } catch (err) {
-      setError((err as any).response?.data || 'Votre code ou mot de passe est incorrect.');
+      setError('Erreur réseau ou serveur.');
     } finally {
       setLoading(false);
     }

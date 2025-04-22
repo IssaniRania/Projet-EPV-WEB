@@ -49,11 +49,11 @@ export function HeaderSection({
   // Responsive width & margin
   const width = isLargeScreen && isSidebarOpen
     ? `calc(100% - ${drawerWidth}px)`
-    : '100%';
+    : 1640;
 
   const marginLeft = isLargeScreen && isSidebarOpen
     ? `${drawerWidth}px`
-    : 0;
+    : -27;
 
   const toolbarStyles = {
     default: {

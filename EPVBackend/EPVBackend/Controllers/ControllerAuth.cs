@@ -5,6 +5,10 @@ using EPVBackend.DTOs;
 using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
 using EPVBackend.Service;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 
 namespace EPVBackend.Controllers
 {
@@ -13,49 +17,95 @@ namespace EPVBackend.Controllers
     public class ControllerAuth : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
-        public ControllerAuth(ApplicationDbContext context, IEmailService emailService)
+        public ControllerAuth(ApplicationDbContext context, IEmailService emailService, IConfiguration configuration)
         {
             _context = context;
             _emailService = emailService;
+            _configuration = configuration;
         }
+        //[HttpPost("login")]
+        //public IActionResult Login([FromBody] LoginRequest request)
+        //{
+        //    var utilisateur = _context.Utilisateur
+        //        .FirstOrDefault(u => u.Code == request.Code && u.MotdePasse == request.MotdePasse && u.Actif);
+
+        //    if (utilisateur == null)
+        //    {
+        //        return Unauthorized(new { message = "Code ou mot de passe incorrect ou compte inactif." });
+        //    }
+
+        //    return Ok(new
+        //    {
+        //        utilisateur.Code,
+        //        utilisateur.Libelle,
+        //        utilisateur.TypeUtilisateur,
+        //        utilisateur.NomProfil,
+        //        utilisateur.NomPvente
+        //    });
+        //}
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
             var utilisateur = _context.Utilisateur
                 .FirstOrDefault(u => u.Code == request.Code && u.MotdePasse == request.MotdePasse && u.Actif);
 
-            if (utilisateur == null)
+            if (utilisateur == null || !utilisateur.Actif)
             {
                 return Unauthorized(new { message = "Code ou mot de passe incorrect ou compte inactif." });
             }
 
-            return Ok(new
+            // Vérification de la clé JWT dans la configuration
+            var jwtKey = _configuration["Jwt:Key"];
+            if (string.IsNullOrEmpty(jwtKey))
             {
-                utilisateur.Code,
-                utilisateur.Libelle,
-                utilisateur.TypeUtilisateur,
-                utilisateur.NomProfil,
-                utilisateur.NomPvente
+                return Unauthorized(new { message = "La clé JWT est manquante dans la configuration." });
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            // Créer les claims pour le JWT
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()),  // Assure-toi que l'ID est bien sous forme de chaîne
+        new Claim(ClaimTypes.Name, utilisateur.Libelle),
+        new Claim(ClaimTypes.Email, utilisateur.Email),
+        new Claim(ClaimTypes.Role, utilisateur.NomProfil),
+        new Claim("NomProfil", utilisateur.NomProfil ?? ""),
+        new Claim("NomPvente", utilisateur.NomPvente ?? "")
+    };
+
+            // Générer le token JWT
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            // Retourner le token et les infos de l'utilisateur
+            return Ok(new LoginResponse
+            {
+                Token = jwt,
+                Code = utilisateur.Code,
+                Libelle = utilisateur.Libelle,
+                Email=utilisateur.Email,
+                NomProfil = utilisateur.NomProfil ?? "Administrateur"
+
             });
         }
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Supprimer le cookie contenant le token
+            Response.Cookies.Delete("authToken");
 
-        //[HttpPost("reset-password")]
-        //public IActionResult ResetPassword([FromBody] ResetPasswordRequest request)
-        //{
-        //    var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Code == request.Code);
-
-        //    if (utilisateur == null)
-        //    {
-        //        return NotFound(new { message = "Utilisateur introuvable." });
-        //    }
-
-        //    utilisateur.MotdePasse = request.NewPassword;
-        //    _context.SaveChanges();
-
-        //    return Ok(new { message = "Mot de passe mis à jour avec succès." });
-        //}
-
+            return Ok(new { message = "Déconnexion réussie." });
+        }
 
 
         [HttpPost("register")]

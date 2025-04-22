@@ -176,6 +176,7 @@ D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.genruntimeconfig.cache
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\ref\EPVBackend.dll
+<<<<<<< HEAD
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.csproj.AssemblyReference.cache
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.AssemblyInfoInputs.cache
@@ -187,3 +188,6 @@ C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\ne
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.dll
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
 C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb
+=======
+D:\ProjetEPV\EPVBackend\EPVBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> 2d4f632086be2f864d78796537eab7d701cdee00

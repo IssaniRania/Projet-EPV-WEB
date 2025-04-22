@@ -1,5 +1,5 @@
 import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
-
+import {useState} from 'react';
 import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 
@@ -25,7 +25,7 @@ export type AuthLayoutProps = {
 
 export function AuthLayout({ sx, children, header }: AuthLayoutProps) {
   const layoutQuery: Breakpoint = 'md';
-
+const [open, setOpen] = useState(true);
   return (
     <LayoutSection
       /** **************************************
@@ -34,6 +34,8 @@ export function AuthLayout({ sx, children, header }: AuthLayoutProps) {
       headerSection={
         <HeaderSection
           layoutQuery={layoutQuery}
+          drawerWidth={open ? 0 : 0}
+          isSidebarOpen={open}
           slotProps={{
             container: { maxWidth: false },
             toolbar: { sx: { bgcolor: 'transparent', backdropFilter: 'unset' } },

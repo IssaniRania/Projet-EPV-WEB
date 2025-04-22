@@ -3,8 +3,12 @@
     "",
     "\\Controllers",
     "\\DTOs",
+<<<<<<< HEAD
     "\\Service"
+=======
+    "\\Model"
+>>>>>>> 2d4f632086be2f864d78796537eab7d701cdee00
   ],
-  "SelectedNode": "\\Service\\EmailService.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

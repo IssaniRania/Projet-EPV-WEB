@@ -2,6 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using EPVBackend.Data;
 using EPVBackend;
 using EPVBackend.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,46 @@ builder.Services.AddSingleton<IEmailService, EmailService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 // Ajouter des services nécessaires pour Swagger
 builder.Services.AddSwaggerGen(); // Active Swagger
+
+var configuration = builder.Configuration;
+
+// Vérifier la clé JWT
+var jwtKey = configuration["Jwt:Key"] ?? throw new InvalidOperationException("La clé JWT est manquante.");
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new ArgumentNullException("Jwt:Key", "La clé JWT est manquante dans la configuration.");
+}
+
+// Ajouter l'authentification JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(jwtKey)
+            ),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        builder =>
+        {
+            builder
+                .WithOrigins("http://localhost:3039")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
+
 
 // Ajouter les contrôleurs pour les API
 builder.Services.AddControllers();
@@ -53,8 +97,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(); // Interface Swagger UI pour visualiser et tester les API
 }
 
+
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors("AllowAllOrigins");
 // Configurer les routes des contrôleurs
