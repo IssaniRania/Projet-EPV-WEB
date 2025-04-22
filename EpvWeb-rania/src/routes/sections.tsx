@@ -17,10 +17,14 @@ export const UserPage = lazy(() => import('src/pages/user'));
 export const SignInPage = lazy(() => import('src/pages/auth/sign-in'));
 export const ForgotPasswordView = lazy(() => import('src/pages/auth/Forgot-Password-View'));
 export const SignUpView=lazy(()=>import('src/pages/auth/sign-up'));
-//----------------------------------------------------------------------
+// Initialisation----------------------------------------------------------------------
 export const ReglementView=lazy(()=>import('src/pages/Initialisation/Reglement-View'));
 export const ParametrageView=lazy(()=>import('src/pages/Initialisation/Parametrage-View'));
 export const TvaView=lazy(()=>import('src/pages/Initialisation/tva-View'));
+export const BanquesView=lazy(()=>import('src/pages/Initialisation/banques'));
+export const CompteurView=lazy(()=>import('src/pages/Initialisation/compteur'));
+
+
 
 
 export const ProductsPage = lazy(() => import('src/pages/products'));
@@ -61,6 +65,10 @@ export function Router() {
          {path:'ModeReglement',element: <ReglementView />},
          {path:'Parametrage',element: <ParametrageView />},
          {path:'TVA',element: <TvaView />},
+         {path:'Banques',element: <BanquesView />},
+         {path:'Compteur',element: <CompteurView />},
+
+
 
         { path: 'blog', element: <BlogPage /> },
       ],

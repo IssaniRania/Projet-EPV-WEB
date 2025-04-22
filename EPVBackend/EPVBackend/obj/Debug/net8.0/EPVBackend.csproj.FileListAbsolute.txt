@@ -176,3 +176,14 @@ D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.genruntimeconfig.cache
 D:\ProjetEPV\EPVBackend\EPVBackend\obj\Debug\net8.0\ref\EPVBackend.dll
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.sourcelink.json
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.dll
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\refint\EPVBackend.dll
+C:\Users\Administrator\Desktop\Projet-EPV-WEB\EPVBackend\EPVBackend\obj\Debug\net8.0\EPVBackend.pdb

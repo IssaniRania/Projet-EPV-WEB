@@ -2,10 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Controllers\\Initialisation",
     "\\DTOs",
-    "\\Interface",
-    "\\Properties",
     "\\Service"
   ],
   "SelectedNode": "\\Service\\EmailService.cs",

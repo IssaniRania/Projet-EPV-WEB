@@ -2,17 +2,17 @@ import { Helmet } from 'react-helmet-async';
 
 import { CONFIG } from 'src/config-global';
 
-import { TvaView } from 'src/sections/Initialisation/TVA/view'
+import { CompteurView } from 'src/sections/Initialisation/compteur/view'
 // ----------------------------------------------------------------------
 
 export default function Page() {
   return (
     <>
       <Helmet>
-        <title> {`TVA - ${CONFIG.appName}`}</title>
+        <title> {`compteur - ${CONFIG.appName}`}</title>
       </Helmet>
 
-      <TvaView />
+      <CompteurView />
     </>
   );
 }
