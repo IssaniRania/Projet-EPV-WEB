@@ -57,14 +57,14 @@ export function SignInView() {
       const token = responseData.token;
       const Libelle = responseData.libelle;
       const email = responseData.email;
-      console.log('Token:', token);
-      console.log('data:', responseData);
-      console.log('Libelle:', Libelle);
+      const id= responseData.id;
       sessionStorage.setItem('authToken', token);
       sessionStorage.setItem('authLibelle', Libelle);
       sessionStorage.setItem('authEmail', email);
+      console.log(id);
+      sessionStorage.setItem('authId', id);
       setSuccess('Connexion réussie');
-        router.push('/home');
+        router.push('/');
       } else if (response.status === 401) {
         setError('Votre code ou mot de passe est incorrect.');
       } else {

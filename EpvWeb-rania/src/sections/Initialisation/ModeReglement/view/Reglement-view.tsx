@@ -28,6 +28,7 @@ interface NewReglement {
   Code: string;
   Libelle: string;
   Tiroir: boolean;
+  userId:String;
   MoyenPaiement: string;  
 }
 
@@ -49,6 +50,7 @@ export function ReglementView() {
     Code: '',
     Libelle: '',
     Tiroir: false,
+    userId: '',
     MoyenPaiement: '',
   });
   const resetForm = () => {
@@ -56,6 +58,7 @@ export function ReglementView() {
       Code: '',
       Libelle: '',
       Tiroir: false,
+      userId: '',
       MoyenPaiement: '',
     });
   };
@@ -101,7 +104,7 @@ useEffect(() => {
  // Vérification si le code existe déjà
 const checkIfCodeExists = async (code: string) => {
   try {
-    const response = await axios.get(`http://localhost:5088/api/ModeReglement/${code}`);
+    const response = await axios.get(`http://localhost:5088/api/ModeReglement/code/${code}`);
     return response.data; // Si l'enregistrement existe déjà, les données seront retournées
   } catch (error) {
     console.error("Erreur lors de la vérification du code :", error);
@@ -116,15 +119,18 @@ const checkIfCodeExists = async (code: string) => {
     alert("Ce code existe déjà. Veuillez en choisir un autre.");
     return; // Ne pas procéder à l'ajout si le code existe déjà
   }
+const id=sessionStorage.getItem('authId');
 
     const reglementToSend = {
       Code: newReglement.Code,
       Libelle: newReglement.Libelle,
       Tiroir: newReglement.Tiroir,
+      userId:id,
       MoyenPaiement: newReglement.MoyenPaiement, // uniquement le libellé
     };
   
     try {
+      
       await axios.post("http://localhost:5088/api/ModeReglement", reglementToSend);
       console.log("Succès !");
       resetForm();
@@ -135,8 +141,9 @@ const checkIfCodeExists = async (code: string) => {
   };
   
 const fetchProduits = async () => {
+  const userId=sessionStorage.getItem('authId');
   try {
-    const response = await axios.get('http://localhost:5088/api/ModeReglement');
+    const response = await axios.get(`http://localhost:5088/api/ModeReglement/${userId}`);
     setNewReglement(response.data);
   } catch (error) {
     console.error("Erreur lors de la récupération des produits", error);

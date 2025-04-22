@@ -85,6 +85,7 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
     const fetchMoyensPaiement = async () => {
       try {
         console.log("test");
+        
         const response = await axios.get('http://localhost:5088/api/Initialisation/');
         setMoyensPaiement(response.data);
       } catch (err) {
@@ -96,9 +97,10 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
   
 
   const handleSubmit = () => {
+    const id=sessionStorage.getItem('authId');
     const endpoint = isEditMode
       ? `http://localhost:5088/api/ModeReglement/${newReglement.code}`
-      : 'http://localhost:5088/api/ModeReglement';
+      : `http://localhost:5088/api/ModeReglement/`;
 
     const method = isEditMode ? axios.put : axios.post;
 
@@ -113,8 +115,9 @@ export function ReglementTable({ filterName, reload }: ProductTableProps) {
   };
 
   useEffect(() => {
+    const userId=sessionStorage.getItem('authId');
     axios
-      .get('http://localhost:5088/api/ModeReglement')
+      .get(`http://localhost:5088/api/ModeReglement/${userId}`)
       .then((response) => {
         setReglements(response.data);
         setLoading(false);
