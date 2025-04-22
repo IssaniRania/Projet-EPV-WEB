@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Controllers\\Initialisation",
-    "\\DTOs",
-    "\\Model"
+    "\\Interface"
   ],
   "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
