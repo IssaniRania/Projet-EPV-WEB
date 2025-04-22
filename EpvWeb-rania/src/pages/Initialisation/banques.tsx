@@ -2,17 +2,17 @@ import { Helmet } from 'react-helmet-async';
 
 import { CONFIG } from 'src/config-global';
 
-import { TvaView } from 'src/sections/Initialisation/TVA/view'
+import { BanquesView } from 'src/sections/Initialisation/Banque/view'
 // ----------------------------------------------------------------------
 
 export default function Page() {
   return (
     <>
       <Helmet>
-        <title> {`TVA - ${CONFIG.appName}`}</title>
+        <title> {`Banques - ${CONFIG.appName}`}</title>
       </Helmet>
 
-      <TvaView />
+      <BanquesView />
     </>
   );
 }
