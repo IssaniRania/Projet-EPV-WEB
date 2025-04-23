@@ -60,12 +60,12 @@ export const navData = [
   },
   {
     title: 'Clients',
-    path: '/blog',
+    path: '/Client',
     icon: icon('ic-clients',20),
   },
   {
     title: 'Fournisseurs',
-    path: '/blog',
+    path: '/Fournisseur',
     icon: icon('ic-fourn',20),
   },
   {

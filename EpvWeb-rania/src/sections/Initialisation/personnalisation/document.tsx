@@ -34,10 +34,10 @@ export function Document() {
       flexDirection: 'column',
       alignItems: 'center',
       mb: 3,
-      mt: 0.5,
+      mt: 0,
     }}
   >
-    <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
+    <Typography variant="h4" gutterBottom sx={{ mb: 2 }}>
       Libellé Documents
     </Typography>
 

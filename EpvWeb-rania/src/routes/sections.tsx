@@ -26,10 +26,12 @@ export const CompteurView=lazy(()=>import('src/pages/Initialisation/compteur'));
 export const PersonnalisationView=lazy(()=>import('src/pages/Initialisation/personnalisation'));
 
 
+export const ClientView = lazy(() => import('src/pages/clients'));
+export const FournisseurView = lazy(() => import('src/pages/fournisseur'));
 
 
 
-export const ProductsPage = lazy(() => import('src/pages/products'));
+
 export const NewProductPage =lazy(() => import('src/pages/newproducts'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 
@@ -61,7 +63,12 @@ export function Router() {
       children: [
         { element: <HomePage />, index: true },
         { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
+        {path:'Client',element: <ClientView />},
+        {path:'Fournisseur',element: <FournisseurView />},
+
+
+
+
         { path: 'newproducts', element: <NewProductPage />},
 
          {path:'ModeReglement',element: <ReglementView />},

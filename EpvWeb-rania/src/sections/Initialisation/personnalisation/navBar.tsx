@@ -14,7 +14,17 @@ const RoundedNavBar = ({ onChangeSection }: { onChangeSection: (section: string)
   <Box sx={{ flexGrow: 1 }}>
     <AppBar
       position="static"
-      sx={{ borderRadius: '16px', overflow: 'hidden', backgroundColor: '#9FB3DF', mt: 2 }}
+      sx={{   borderRadius: '16px',
+        overflow: 'hidden',
+        backgroundColor: '#9FB3DF',
+        
+        display: 'flex',        // Enables flexbox layout
+        justifyContent: 'center', // Centers the button horizontally
+        alignItems: 'center',     // Centers the button vertically
+        
+        width: '60%', 
+    margin: '0 auto',              
+        }}
     >
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', padding: '0 20px' }}>
         <Box sx={{ display: 'flex', gap: 2 }}>
