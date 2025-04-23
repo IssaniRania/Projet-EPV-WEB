@@ -23,6 +23,8 @@ export const ParametrageView=lazy(()=>import('src/pages/Initialisation/Parametra
 export const TvaView=lazy(()=>import('src/pages/Initialisation/tva-View'));
 export const BanquesView=lazy(()=>import('src/pages/Initialisation/banques'));
 export const CompteurView=lazy(()=>import('src/pages/Initialisation/compteur'));
+export const PersonnalisationView=lazy(()=>import('src/pages/Initialisation/personnalisation'));
+
 
 
 
@@ -67,6 +69,8 @@ export function Router() {
          {path:'TVA',element: <TvaView />},
          {path:'Banques',element: <BanquesView />},
          {path:'Compteur',element: <CompteurView />},
+         {path:'Personnalisation',element: <PersonnalisationView />},
+
 
 
 

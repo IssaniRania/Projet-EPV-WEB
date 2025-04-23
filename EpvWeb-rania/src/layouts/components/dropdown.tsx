@@ -63,7 +63,7 @@ function DropdownButtons() {
         </MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/TVA')}>TVA / Taxes</MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/Banques')}>Banques</MenuItem>
-        <MenuItem onClick={handleMenuItemClick(setAnchorElInit)}>Personalisation</MenuItem>
+        <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/Personnalisation')}>Personnalisation</MenuItem>
         <MenuItem onClick={handleMenuItemClick(setAnchorElInit, '/Compteur')}>Compteurs</MenuItem>
       </Menu>
 
