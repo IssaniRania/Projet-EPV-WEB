@@ -169,20 +169,30 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
   if (error) return <div>{error}</div>;
 
   return (
-    <>
-<Box
-      display="flex"
-      justifyContent="center"
-      height="70vh" // prend toute la hauteur de l'écran
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        bgcolor: 'background.paper',
+        borderRadius: 2,
+        boxShadow: 1,
+        overflow: 'hidden', // Pour border-radius sur les enfants
+      }}
     >
+      {/* Header avec search + compteur */}
       <Box
-        p={4}
-        width="70%"
-        bgcolor="#FFF"
-        borderRadius={2}
+        sx={{
+          p: 2,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 2,
+          flexWrap: 'wrap',
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+        }}
       >
-    <Toolbar sx={{ height: 96,display: 'flex', justifyContent: 'space-between', p: (theme) => theme.spacing(0, 1, 0, 3)}}>
-          <OutlinedInput
+        <OutlinedInput
             fullWidth
             value={filteName}
             onChange={handleSearch}
@@ -194,68 +204,78 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
             }
             sx={{ maxWidth: 320 }}
           />
-          <Typography sx={{ maxWidth: 520 , marginLeft:10 }}>Nombre des Articles : {filteredProducts.length}</Typography>
-          
-        </Toolbar>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Code</TableCell>
-            <TableCell>Libelle</TableCell>
-            <TableCell>MoyenPaiement</TableCell>
-            <TableCell align="right">Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((Reglement, index) => (
-              <TableRow key={index}>
-                <TableCell>{Reglement.code}</TableCell>
-                <TableCell>{Reglement.libelle}</TableCell>
-                <TableCell>
+
+        <Typography variant="subtitle2" color="text.secondary">
+          {filteredProducts.length} résultat(s)
+        </Typography>
+      </Box>
+
+      {/* Tableau avec scroll */}
+      <Box sx={{ flex: 1, overflow: 'auto' }}>
+        <Table stickyHeader>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ fontWeight: 'bold' }}>Code</TableCell>
+              <TableCell sx={{ fontWeight: 'bold' }}>Libellé</TableCell>
+              <TableCell sx={{ fontWeight: 'bold' }}>Moyen de Paiement</TableCell>
+              <TableCell align="right" sx={{ fontWeight: 'bold' }}>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((reglement) => (
+                <TableRow
+                  key={reglement.code}
+                  hover
+                  sx={{ '&:last-child td': { borderBottom: 0 } }}
+                >
+                  <TableCell>{reglement.code}</TableCell>
+                  <TableCell>{reglement.libelle}</TableCell>
+                  <TableCell>
                   {
-                    moyensPaiement.find(mp => mp.code === Reglement.moyenPaiement)?.libelle || Reglement.moyenPaiement
+                    moyensPaiement.find(mp => mp.code === reglement.moyenPaiement)?.libelle || reglement.moyenPaiement
                   }
-                </TableCell>
-                <TableCell align="right">
-                  <IconButton onClick={(e) => handleOpenPopover(e, Reglement)}>
-                    <Iconify icon="eva:more-vertical-fill" />
-                  </IconButton>
+                  </TableCell>
+                  <TableCell align="right">
+                    <IconButton
+                      onClick={(e) => handleOpenPopover(e, reglement)}
+                      sx={{ color: 'text.secondary' }}
+                    >
+                      <Iconify icon="eva:more-vertical-fill" />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={4} align="center" sx={{ py: 4 }}>
+                  <Typography variant="body2" color="text.disabled">
+                    Aucun résultat trouvé
+                  </Typography>
                 </TableCell>
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={4}>Aucun produit trouvé</TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
-      
+            )}
+          </TableBody>
+        </Table>
+      </Box>
+
+      {/* Popover Actions */}
       <Popover
         open={openPopover}
         anchorEl={anchorEl}
         onClose={handleClosePopover}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        PaperProps={{
+          sx: {
+            p: 1,
+            width: 160,
+            boxShadow: 2,
+          },
+        }}
       >
-        <MenuList
-          disablePadding
-          sx={{
-            p: 0.5,
-            gap: 0.5,
-            width: 140,
-            display: 'flex',
-            flexDirection: 'column',
-            [`& .${menuItemClasses.root}`]: {
-              px: 1,
-              gap: 2,
-              borderRadius: 0.75,
-              [`&.${menuItemClasses.selected}`]: { bgcolor: 'action.selected' },
-            },
-          }}
-        >
-          <MenuItem
+        <MenuList>
+        <MenuItem
             onClick={() => {
               if (selectedReglement) {
                 handleEditClick(selectedReglement);
@@ -266,27 +286,33 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
             <Iconify icon="solar:pen-bold" />
             Modifier
           </MenuItem>
-
+            
           <MenuItem
-            onClick={() => {
-              if (selectedReglement) {
-                handleDelete(selectedReglement);
-              }
-            }}
-            sx={{ color: 'error.main' }}
+            onClick={() => selectedReglement && handleDelete(selectedReglement)}
+            sx={{ color: 'error.main', borderRadius: 1 }}
           >
-            <Iconify icon="solar:trash-bin-trash-bold" />
+            <Iconify icon="solar:trash-bin-trash-bold" width={18} sx={{ mr: 1.5 }} />
             Supprimer
           </MenuItem>
         </MenuList>
       </Popover>
-   
-      <Dialog open={openModal} onClose={handleCloseModal}>
+
+      {/* Dialog Edit/Add */}
+      <Dialog
+        open={openModal}
+        onClose={handleCloseModal}
+        PaperProps={{
+          sx: {
+            width: '100%',
+            maxWidth: 500,
+          },
+        }}
+      >
         <DialogTitle>
-          {isEditMode ? "Modifier le Mode de Règlement" : "Ajouter un Nouveau Mode Reglement"}
+          {isEditMode ? 'Modifier le Règlement' : ''}
         </DialogTitle>
-        <DialogContent>
-          <TextField
+        <DialogContent dividers>
+        <TextField
             label="Code"
             name="code"
             value={newReglement.code}
@@ -341,17 +367,17 @@ const btnModifierRef = useRef<HTMLButtonElement>(null);
             label="Ouverture Tiroir-Caisse"
           />
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseModal} color="primary">
-            Annuler
-          </Button>
-          <Button ref={btnModifierRef} onClick={handleSubmit} color="primary">
-            {isEditMode ? "Modifier" : "Ajouter"}
+        <DialogActions sx={{ p: 2 }}>
+          <Button onClick={handleCloseModal}>Annuler</Button>
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            disableElevation
+          >
+            {isEditMode ? 'Enregistrer' : 'Ajouter'}
           </Button>
         </DialogActions>
       </Dialog>
-      </Box>
-      </Box>
-    </>
+    </Box>
   );
 }

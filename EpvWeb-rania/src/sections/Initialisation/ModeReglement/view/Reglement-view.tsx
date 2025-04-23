@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import {
-   Dialog, DialogActions, DialogContent, DialogTitle,
+  Grid,Dialog, DialogActions, DialogContent, DialogTitle,
   TextField,FormControlLabel,Checkbox,FormControl,InputLabel,Select
 } from '@mui/material';
 import { _product } from 'src/_mock';
@@ -163,98 +163,125 @@ const btnAjouterRef = useRef<HTMLButtonElement>(null);
 
   return (
     <DashboardContent>
-      <Box display="flex" alignItems="center" mb={5}>
+      <Box alignItems="center" mb={5}>
         <Typography variant="h4" flexGrow={1}>
           Mode de Réglement
         </Typography>
-        <Button
-          variant="contained"
-          color="inherit"
-          startIcon={<Iconify icon="mingcute:add-line" />}
-          onClick={handleOpenModal}
-        >
-          Nouveau Article
-        </Button>
       </Box>
-      
-      
-      
-      {/* Appel à ProductTable en passant filterName */}
-          <ReglementTable filterName={filterName} reload={fetchProduits} />
-       
-              {/* Modal Dialog for creating a new product */}
-              <Dialog open={openModal} onClose={handleCloseModal}>
-                <DialogTitle>Ajouter un Nouveau Mode Reglement</DialogTitle>
-                <DialogContent>
-                  {/* Form inputs inside the modal */}
-                  <TextField
-                    label="Code"
-                    name="Code"
-                    value={newReglement.Code}
-                    onChange={handleInputChange} 
-                    inputRef={codeRef}
-                    onKeyDown={handleEnterKeyFocus(libelleRef)}
-                    fullWidth
-                    margin="normal"
-                  />
-                  <TextField
-                    label="Libelle"
-                    name="Libelle"
-                    value={newReglement.Libelle}
-                    onChange={handleInputChange}
-                    inputRef={libelleRef}
-                    onKeyDown={handleEnterKeyFocus(moyenPaiementRef)}
-                    fullWidth
-                    margin="normal"
-                  />
-              <TextField
-                select
-                label="Moyen de Paiement"
-                name="MoyenPaiement"
-                inputRef={moyenPaiementRef}
-                value={newReglement.MoyenPaiement || ""} // ici c’est le libellé
-                onChange={handleInputChange}
-                onKeyDown={handleEnterKeyFocus(btnAjouterRef)}
-                fullWidth
-                margin="normal"
-                variant="outlined"
-              >
-                {moyensPaiement.map((option) => (
-                  <MenuItem key={option.code} value={option.libelle}>
-                    {option.libelle}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={!!newReglement.Tiroir}
-                    onChange={(e) =>
-                      setNewReglement((prev) => ({
-                        ...prev,
-                        Tiroir: e.target.checked
-                      }))
-                    }
-                  />
-                }
-                label="Ouverture Tiroir-Caisse"
-              />
+      <Grid
+        container
+        spacing={3}
+        sx={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+        }}
+      >
+  {/* Tableau des règlements */}
+  <Grid
+    item
+    xs={12}
+    md={7}
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 2,
+      minHeight: '100%',
+    }}
+  >
+    <ReglementTable filterName={filterName} reload={fetchProduits} />
+  </Grid>
 
-                </DialogContent>
-                <DialogActions>
-                 
-                  <Button onClick={handleCloseModal} color="primary">
-                    Annuler
-                  </Button>
-                  
-                  <Button ref={btnAjouterRef} onClick={handleSubmit} color="primary">
-                    Ajouter
-                  </Button>
-                </DialogActions>
-              </Dialog>
-             
-         
-            
-    </DashboardContent>
+  {/* Formulaire d'ajout */}
+  <Grid
+    item
+    xs={12}
+    md={4.5}
+    sx={{
+      p: 3,
+      
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      gap: 2,
+      bgcolor: 'background.paper',
+        borderRadius: 2,
+        boxShadow: 1,
+        overflow: 'hidden',
+    }}
+  >
+    <Typography variant="h6" gutterBottom>
+      Ajouter un Nouveau Mode de Règlement
+    </Typography>
+
+    <TextField
+      label="Code"
+      name="Code"
+      value={newReglement.Code}
+      onChange={handleInputChange}
+      inputRef={codeRef}
+      onKeyDown={handleEnterKeyFocus(libelleRef)}
+      fullWidth
+      margin="normal"
+    />
+
+    <TextField
+      label="Libellé"
+      name="Libelle"
+      value={newReglement.Libelle}
+      onChange={handleInputChange}
+      inputRef={libelleRef}
+      onKeyDown={handleEnterKeyFocus(moyenPaiementRef)}
+      fullWidth
+      margin="normal"
+    />
+
+    <TextField
+      select
+      label="Moyen de Paiement"
+      name="MoyenPaiement"
+      value={newReglement.MoyenPaiement}
+      onChange={handleInputChange}
+      inputRef={moyenPaiementRef}
+      onKeyDown={handleEnterKeyFocus(btnAjouterRef)}
+      fullWidth
+      margin="normal"
+    >
+      {moyensPaiement.map((option) => (
+        <MenuItem key={option.code} value={option.libelle}>
+          {option.libelle}
+        </MenuItem>
+      ))}
+    </TextField>
+
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={newReglement.Tiroir}
+          onChange={(e) =>
+            setNewReglement((prev) => ({
+              ...prev,
+              Tiroir: e.target.checked,
+            }))
+          }
+        />
+      }
+      label="Ouverture Tiroir-Caisse"
+    />
+
+    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
+      <Button
+        ref={btnAjouterRef}
+        onClick={handleSubmit}
+        variant="contained"
+        color="primary"
+      >
+        Ajouter
+      </Button>
+    </Box>
+  </Grid>
+</Grid>
+</DashboardContent>
   );
 }
