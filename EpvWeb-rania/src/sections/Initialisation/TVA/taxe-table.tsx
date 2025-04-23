@@ -49,7 +49,7 @@ const rows = [
 export default function TaxeTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500, marginTop:4 }} aria-label="TVA table">
+      <Table sx={{ minWidth: 200, marginTop:4 }} aria-label="TVA table">
         <TableHead>
           <TableRow>
             <StyledTableCell align="center">Code</StyledTableCell>

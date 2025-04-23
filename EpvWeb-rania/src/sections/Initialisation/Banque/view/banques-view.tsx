@@ -24,11 +24,7 @@ import {
 import { _product } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
 import { Iconify } from 'src/components/iconify';
-
-
-
-
-
+import BanquesTable from '../banques-table';
 
 export function BanquesView() {
   // logo Button
@@ -39,46 +35,57 @@ export function BanquesView() {
 
   return (
     <DashboardContent>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center', // center the group horizontally
-          alignItems: 'center', // align them vertically
-          mb: 3,
-          mt: 0.5,
-        }}
-      >
-        <Grid item xs={12} md={7}  marginRight={5}  sx={{ mb: 11 }}>
-          <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
-            Banques
-          </Typography>
-          <Box sx={{ p: 3, bgcolor: '#fff', borderRadius: 2 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
-                <TextField fullWidth label="Code BCT" variant="outlined" />
-                <TextField fullWidth label="IBAN" variant="outlined" />
+  <Box
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      mb: 3,
+      mt: 0.5,
+    }}
+  >
+    <Grid item xs={12} md={7}>
+      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
+        Banques
+      </Typography>
+      <Box sx={{ p: 4, bgcolor: '#fff', borderRadius: 2 }}>
+        <Grid container spacing={3} justifyContent="center" alignItems="center">
+          {/* First column */}
+          <Grid item xs={12} sm={4}>
+            <TextField fullWidth label="Code BCT" variant="outlined" sx={{ mb: 2 }} />
+            <TextField fullWidth label="IBAN" variant="outlined" />
+          </Grid>
 
-              </Grid>
-             
-              <Grid item xs={12} sm={4}>
-                <TextField fullWidth label="Libelle Diminutif" variant="outlined" />
-                <TextField fullWidth label="BIC" variant="outlined" />
+          {/* Second column */}
+          <Grid item xs={12} sm={4}>
+            <TextField fullWidth label="Libelle Diminutif" variant="outlined" sx={{ mb: 2 }} />
+            <TextField fullWidth label="BIC" variant="outlined" />
+          </Grid>
 
-              </Grid>
-              <TextField fullWidth label="Libelle" variant="outlined" />
+          {/* Libelle - full width below */}
+          <Grid item xs={12} display="flex" justifyContent="center">
+            <TextField
+              label="Libelle"
+              variant="outlined"
+              sx={{ width: '710px', height: '40px' }}
+            />
+          </Grid>
 
-              <Grid item xs={12} display="flex" justifyContent="center">
-                <Button variant="contained" sx={{ mt: 2 }}>
-                  Valider
-                </Button>
-              </Grid>
-            </Grid>
-           
-          </Box>
+          {/* Button */}
+          <Grid item xs={12} display="flex" justifyContent="center">
+            <Button variant="contained" sx={{ mt: 2,width: '180px', height: '50px',fontSize: '15px' }}>
+              Valider
+            </Button>
+          </Grid>
         </Grid>
 
-       
+        {/* Centered Table */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <BanquesTable />
+        </Box>
       </Box>
-    </DashboardContent>
+    </Grid>
+  </Box>
+</DashboardContent>
   );
 }

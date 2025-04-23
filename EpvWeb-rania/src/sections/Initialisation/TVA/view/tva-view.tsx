@@ -39,72 +39,83 @@ export function TvaView() {
   };
 
   return (
-    <DashboardContent>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center', // center the group horizontally
-          alignItems: 'center', // align them vertically
-          mb: 3,
-          mt: 0.5,
-        }}
-      >
-        <Grid item xs={12} md={7}  marginRight={5}  sx={{ mb: 11 }}>
-          <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
-            TVA
-          </Typography>
-          <Box sx={{ p: 3, bgcolor: '#fff', borderRadius: 2 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
-                <TextField fullWidth label="Code" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField fullWidth label="Taux TVA" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField fullWidth label="Majoration TVA" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} display="flex" justifyContent="center">
-                <Button variant="contained" sx={{ mt: 2 }}>
-                  Valider
-                </Button>
-              </Grid>
+   <DashboardContent>
+  <Box sx={{ width: '100%', px: 2, mt: 4 }}>
+    <Box
+      sx={{
+        maxWidth: '1200px',
+        mx: 'auto', // centers horizontally
+        display: 'flex',
+        gap: 4,
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        mr: 8,
+      }}
+    >
+      {/* TVA Section */}
+      <Box sx={{ width: '500px' }}>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
+          TVA
+        </Typography>
+        <Box sx={{ p: 3, bgcolor: '#fff', borderRadius: 2 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={4}>
+              <TextField fullWidth label="Code" variant="outlined" />
             </Grid>
-            <Grid sx={{ mt: 8}}>
-            <TvaTable   />
+            <Grid item xs={12} sm={4}>
+              <TextField fullWidth label="Taux TVA" variant="outlined" />
             </Grid>
+            <Grid item xs={12} sm={4}>
+              <TextField fullWidth label="Majoration TVA" variant="outlined" />
+            </Grid>
+            <Grid item xs={12} display="flex" justifyContent="center">
+              <Button variant="contained" sx={{ mt: 2 }}>
+                Valider
+              </Button>
+            </Grid>
+          </Grid>
+          <Box sx={{ mt: 4 }}>
+            <TvaTable />
           </Box>
-        </Grid>
+        </Box>
+      </Box>
 
-        <Grid item xs={12} md={7} marginRight={5}  marginBottom={9} >
-          <Typography variant="h4" gutterBottom>
-            Autre Taxes et Frais
-          </Typography>
-          <Box sx={{ p: 3, bgcolor: '#fff', borderRadius: 2 }}>
-            <Grid container spacing={2} display="flex" justifyContent="center">
-              <Grid item xs={12} sm={5}>
-                <TextField fullWidth label="Code" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <TextField fullWidth label="Libellé" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <TextField fullWidth label="Taux" variant="outlined" />
-              </Grid>
-              <Grid item xs={12} sm={5}>
-                <TextField fullWidth label="Montant Fixe Par Vente" variant="outlined" />
-              </Grid>
-
-              <Grid item xs={12} display="flex" justifyContent="center">
-                <Button variant="contained" sx={{ mt: 1 }}>
-                  Valider
-                </Button>
-              </Grid>
+      {/* Autre Taxes et Frais Section */}
+      <Box sx={{ width: '500px' }}>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
+          Autre Taxes et Frais
+        </Typography>
+        <Box sx={{ p: 3, bgcolor: '#fff', borderRadius: 2 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth label="Code" variant="outlined" />
             </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth label="Libellé" variant="outlined" />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth label="Taux" variant="outlined" />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth label="Montant Fixe Par Vente" variant="outlined" />
+            </Grid>
+            <Grid item xs={12} display="flex" justifyContent="center">
+              <Button variant="contained" sx={{ mt: 1 }}>
+                Valider
+              </Button>
+            </Grid>
+          </Grid>
+          <Box sx={{ mt: 2 }}>
             <TaxeTable />
           </Box>
-        </Grid>
+        </Box>
       </Box>
-    </DashboardContent>
+    </Box>
+  </Box>
+</DashboardContent>
+
+  
+
+
   );
 }
