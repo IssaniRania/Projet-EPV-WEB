@@ -41,14 +41,13 @@ const rows = [
   createData(0, 0, 0 ),
   createData(0, 0, 0),
   createData(0, 0, 0),
-  createData(0, 0, 0),
-  createData(0, 0, 0,),
+ 
 ];
 
 export default function TvaTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 200, marginTop:10 }} aria-label="TVA table">
+      <Table sx={{ minWidth: 200,}} aria-label="TVA table">
         <TableHead>
           <TableRow>
             <StyledTableCell align="center">Code</StyledTableCell>

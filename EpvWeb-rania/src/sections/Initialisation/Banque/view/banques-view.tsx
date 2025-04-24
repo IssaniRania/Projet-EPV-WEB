@@ -72,8 +72,8 @@ export function BanquesView() {
             >
               <Grid container spacing={3}>
                 <Typography variant="h6" gutterBottom ml={2} mt={2}>
-                Ajouter une Nouvelle Banque
-                                </Typography>
+                  Ajouter une Nouvelle Banque
+                </Typography>
                 <Grid item xs={12} sm={6}>
                   <TextField fullWidth label="Code BCT" variant="outlined" sx={{ mb: 2 }} />
                   <TextField fullWidth label="IBAN" variant="outlined" />
@@ -113,6 +113,9 @@ export function BanquesView() {
               width: '900px', // fixed width
             }}
           >
+            <Typography variant="h6" gutterBottom ml={2} >
+              Liste des Banques
+            </Typography>
             <BanquesTable />
           </Box>
         </Box>
