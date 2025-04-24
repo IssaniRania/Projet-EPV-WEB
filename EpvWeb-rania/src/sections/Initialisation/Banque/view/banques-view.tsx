@@ -35,57 +35,88 @@ export function BanquesView() {
 
   return (
     <DashboardContent>
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      mb: 3,
-      mt: 0.5,
-    }}
-  >
-    <Grid item xs={12} md={7}>
-      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
-        Banques
-      </Typography>
-      <Box sx={{ p: 4, bgcolor: '#fff', borderRadius: 2 }}>
-        <Grid container spacing={3} justifyContent="center" alignItems="center">
-          {/* First column */}
-          <Grid item xs={12} sm={4}>
-            <TextField fullWidth label="Code BCT" variant="outlined" sx={{ mb: 2 }} />
-            <TextField fullWidth label="IBAN" variant="outlined" />
-          </Grid>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          mb: 3,
+          mt: 0.5,
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 4,
+            maxWidth: '1400px',
+            width: '100%',
+          }}
+        >
+          {/* Left side: Title + Form */}
+          <Box sx={{ flex: 7 }}>
+            {/* Title outside the box */}
+            <Typography variant="h4" gutterBottom sx={{ mt: 2, mb: 2 }}>
+              Banques
+            </Typography>
 
-          {/* Second column */}
-          <Grid item xs={12} sm={4}>
-            <TextField fullWidth label="Libelle Diminutif" variant="outlined" sx={{ mb: 2 }} />
-            <TextField fullWidth label="BIC" variant="outlined" />
-          </Grid>
+            {/* Form Box */}
+            <Box
+              sx={{
+                p: 4,
+                bgcolor: '#fff',
+                borderRadius: 2,
+                width: '500px', // fixed width
+                height: 'auto', // or '400px' if you want fixed height
+              }}
+            >
+              <Grid container spacing={3}>
+                <Typography variant="h6" gutterBottom ml={2} mt={2}>
+                Ajouter une Nouvelle Banque
+                                </Typography>
+                <Grid item xs={12} sm={6}>
+                  <TextField fullWidth label="Code BCT" variant="outlined" sx={{ mb: 2 }} />
+                  <TextField fullWidth label="IBAN" variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    label="Libelle Diminutif"
+                    variant="outlined"
+                    sx={{ mb: 2 }}
+                  />
+                  <TextField fullWidth label="BIC" variant="outlined" />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField label="Libelle" variant="outlined" fullWidth sx={{ height: '40px' }} />
+                </Grid>
+                <Grid item xs={12} display="flex" justifyContent="center">
+                  <Button
+                    variant="contained"
+                    sx={{ mt: 2, width: '180px', height: '50px', fontSize: '15px' }}
+                  >
+                    Valider
+                  </Button>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
 
-          {/* Libelle - full width below */}
-          <Grid item xs={12} display="flex" justifyContent="center">
-            <TextField
-              label="Libelle"
-              variant="outlined"
-              sx={{ width: '710px', height: '40px' }}
-            />
-          </Grid>
-
-          {/* Button */}
-          <Grid item xs={12} display="flex" justifyContent="center">
-            <Button variant="contained" sx={{ mt: 2,width: '180px', height: '50px',fontSize: '15px' }}>
-              Valider
-            </Button>
-          </Grid>
-        </Grid>
-
-        {/* Centered Table */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-          <BanquesTable />
+          {/* Right side: Table */}
+          <Box
+            sx={{
+              flex: 9,
+              p: 2,
+              bgcolor: '#fff',
+              borderRadius: 2,
+              mt: 8,
+              width: '900px', // fixed width
+            }}
+          >
+            <BanquesTable />
+          </Box>
         </Box>
       </Box>
-    </Grid>
-  </Box>
-</DashboardContent>
+    </DashboardContent>
   );
 }
