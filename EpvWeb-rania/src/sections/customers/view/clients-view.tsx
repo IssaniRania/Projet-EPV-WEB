@@ -29,6 +29,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Iconify } from 'src/components/iconify';
 import { Scrollbar } from 'src/components/scrollbar';
+import { ClientTable } from '../client-table';
+
 
 // ----------------------------------------------------------------------
 
@@ -47,6 +49,7 @@ export function ClientView() {
           Nouveau Client
         </Button>
       </Box>
+      <ClientTable />
     </DashboardContent>
   );
 }
